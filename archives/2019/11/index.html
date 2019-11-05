@@ -24,7 +24,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1572921369115">
+  <link rel="stylesheet" href="/css/style.css?v=1572925089384">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -102,7 +102,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">Archive</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
     </div>
   </div>
 
@@ -124,7 +124,7 @@
         <a href="/2019/11/05/django-STATIC_ROOT/">
             <div class="nexmoe-post-cover mdui-ripple"> 
                 
-                    <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg" alt="django配置  STATIC_ROOT">
+                <img src="https://i.loli.net/2019/07/21/5d33d5dc1531213134.png" alt="django配置  STATIC_ROOT">
                 
                 <h1>django配置  STATIC_ROOT</h1>
             </div>
@@ -145,47 +145,11 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image = models.ImageField(upload_to=<span class="string">"image/%Y/%m"</span>, default=u<span class="string">"image/default.png"</span>, max_length=100)</span><br></pre></td></tr></table></figure>
 <p>上面是一个数据库模型的字段代码，当你使用upload_to这个属性的时候，django会自动解析，生成相对路径，保存在MEDIA_ROOT设置的根目录下</p>
 <h3 id="STATIC-ROOT"><a href="#STATIC-ROOT" class="headerlink" title="STATIC_ROOT:"></a>STATIC_ROOT:</h3><p>那为什么要使用STATIC_ROOT呢，是因为当你设置中DEBUG为True时，django会自动为你静态文件代理，不过当DEBUG为False时，意味着你要进入生产环境，那么，你就必须使用STATIC_ROOT来指明你的静态文件在哪里，就像MEDIA_ROOT一样。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">"static"</span>)</span><br><span class="line">]</span><br><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">"static"</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">	STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">"static"</span>)</span><br><span class="line">]</span><br><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">"static"</span>)</span><br></pre></td></tr></table></figure>
 <p>在setting.py文件中添加上面代码，并且在urls.py中添加下面代码即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 配置静态文件代理</span><br><span class="line">    url(r&apos;^static/(?P&lt;path&gt;.*)$&apos;, serve, &#123;&apos;document_root&apos;: STATIC_ROOT&#125;),</span><br></pre></td></tr></table></figure>
 
 <h2 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h2><p>详细介绍STATIC_ROOT, <a href="https://blog.csdn.net/alxandral_brother/article/details/52202270" target="_blank" rel="noopener">点击这里</a></p>
-
-            
-        </article>
-    </div>
-    
-    <div class="nexmoe-post">
-        <a href="/2019/11/04/hello-world/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                    <img src="https://i.loli.net/2019/01/13/5c3aec85a4343.jpg" alt="Hello World">
-                
-                <h1>Hello World</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年11月04日</a>
-            <a><i class="nexmoefont icon-areachart"></i>78 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-        </div>
-        <article>
-            
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
             
         </article>
@@ -208,7 +172,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1572921369116"></script>
+<script src="/js/app.js?v=1572925089386"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
