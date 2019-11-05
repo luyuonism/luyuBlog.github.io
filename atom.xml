@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>Lu Ruijie&#39;s Personal Homepage</title>
   
   
   <link href="/atom.xml" rel="self"/>
@@ -31,6 +31,21 @@
       
         &lt;h3 id=&quot;MEDIA-ROOT：&quot;&gt;&lt;a href=&quot;#MEDIA-ROOT：&quot; class=&quot;headerlink&quot; title=&quot;MEDIA_ROOT：&quot;&gt;&lt;/a&gt;MEDIA_ROOT：&lt;/h3&gt;&lt;p&gt;在说STATIC_ROOT之前，必须得提一下MEDIA_ROOT，在
       
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python f-string式格式化</title>
+    <link href="https://luyuonism.github.io/2019/06/05/python-f-string/"/>
+    <id>https://luyuonism.github.io/2019/06/05/python-f-string/</id>
+    <published>2019-06-04T16:00:00.000Z</published>
+    <updated>2019-11-05T06:04:16.266Z</updated>
+    
+    <summary type="html">
     
     </summary>
     
