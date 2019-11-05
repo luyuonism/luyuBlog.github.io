@@ -27,7 +27,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1572925552248">
+  <link rel="stylesheet" href="/css/style.css?v=1572929571532">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -90,8 +90,10 @@
             <i class="nexmoefont icon-github"></i>
         </a><a class="mdui-ripple" href="https://u.wechat.com/MPq28eMaYYbzOIehkmrENOQ" target="_blank" mdui-tooltip="{content: '微信 luyuonism'}" style="color: rgb(102, 255, 204);background-color: rgba(102, 255, 204, .15);">
             <i class="nexmoefont icon-wechat-fill"></i>
-        </a><a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ 1501405087'}" style="color: rgb(102，204，255);background-color: rgba(102，204，255, .15);">
+        </a><a class="mdui-ripple" href="http://wpa.qq.com/msgrd?v=3&uin=&site=qq&menu=yes" target="_blank" mdui-tooltip="{content: 'QQ 1501405087'}" style="color: rgb(102, 204, 255);background-color: rgba(102, 204, 255, .15);">
             <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/6416453194/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" mdui-tooltip="{content: '微博'}" style="color: rgb(255, 69, 24);background-color: rgba(255, 69, 24, .15);">
+            <i class="nexmoefont icon-weibo"></i>
         </a>
     </div>
 </div>
@@ -153,19 +155,19 @@
 
   
   <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '80b2453b6d5f37ad6225',
-        clientSecret: '43e99fa852795c9a7b3eb924b2558c64b84bbdeb',
-        id: window.location.pathname,
-        repo: 'https://luyuonism.github.io',
-        owner: 'luyuonism',
-        admin: 'luyuonism'
-    })
-    gitalk.render('gitalk')
+    <div id="gitment"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'luyuonism', // 你的 GitHub ID
+    repo: 'https://luyuonism.github.io', // 存储评论的 repo
+    oauth: {
+        client_id: '6697f1e2bc68a9625fed', // 你的 client ID
+        client_secret: '173e837a4a0788e2d0c2ecfe68911cd3a3efc2d1' // 你的 client secret
+    },
+})
+gitment.render('gitment')
 </script>
 </section>
 </div>
@@ -184,7 +186,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1572925552254"></script>
+<script src="/js/app.js?v=1572929571537"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
