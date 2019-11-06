@@ -20,7 +20,11 @@
 <meta property="og:description" content="python 学习之路">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
-<meta property="og:updated_time" content="2019-11-06T11:04:45.708Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;uDiWtI1LMxeofac.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;gCmXtq2okPy1McI.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;RICP3bFkplZvUnV.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;JHT9bL6o8f4YryM.png">
+<meta property="og:updated_time" content="2019-11-06T12:15:47.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -30,7 +34,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573038450413">
+  <link rel="stylesheet" href="/css/style.css?v=1573042576464">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -179,8 +183,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>424 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>1,850 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/interview/" rel="tag">interview</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -225,6 +229,147 @@ print(&quot;type&quot;,type(A())  == A)    # type True
 
 print(&#39;isinstance&#39;,isinstance(B(),A) )   # isinstance True
 print(&#39;type&#39;,type(B()) == A)     #  type False</code></pre>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="和"><a href="#和" class="headerlink" title="// 和 %"></a>// 和 %</h3><pre><code class="python">&gt;&gt;&gt; 13 // 3
+4
+&gt;&gt;&gt; -13 // 3
+-5
+&gt;&gt;&gt; 13 // -3
+-5
+&gt;&gt;&gt; -13 // -3
+4
+&gt;&gt;&gt; 13 % 3
+1
+&gt;&gt;&gt; -13 % 3
+2
+&gt;&gt;&gt; 13 % -3
+-2
+&gt;&gt;&gt; -13 % -3
+-1</code></pre>
+<p><strong>如果：x // y = a，x % y = b</strong><br><strong>那么：x = a * y + b</strong><br>13 // -3 = -5, 13 % -3 = -2<br>13 = (-5) * (-3) + (-2)</p>
+<h3 id="gt-gt-和-lt-lt"><a href="#gt-gt-和-lt-lt" class="headerlink" title="&gt;&gt; 和 &lt;&lt;"></a>&gt;&gt; 和 &lt;&lt;</h3><p>‘&gt;&gt;’ 右移  除2<br>‘&lt;&lt;’ 左移  乘2</p>
+<h3 id="math-isclose-a-b-rel-tol-1e-9"><a href="#math-isclose-a-b-rel-tol-1e-9" class="headerlink" title="math.isclose(a, b, rel_tol=1e-9)"></a>math.isclose(a, b, rel_tol=1e-9)</h3><p>浮点数相等的比较，由于存在精度的关系，不能使用==判断，要用math模块的isclose方法。</p>
+<pre><code class="python">&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.isclose(1.0, 1.0000000001)
+True
+&gt;&gt;&gt; math.isclose(1.0, 1.0000000001, rel_tol=1e-10)
+False</code></pre>
+<h3 id="和-is"><a href="#和-is" class="headerlink" title="== 和 is"></a>== 和 is</h3><p>is 判断的是a对象是否是b对象，是通过id来判断<br>== 判断的是a对象的值和b对象的值和类型是否相等，是通过value和type来判断</p>
+<pre><code class="python">&gt;&gt;&gt; a = 1
+&gt;&gt;&gt; b = 1.0
+&gt;&gt;&gt; a is b
+False
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; id(a)
+12777000
+&gt;&gt;&gt; id(b)
+14986000
+&gt;&gt;&gt; a = 1
+&gt;&gt;&gt; b = 1
+&gt;&gt;&gt; a is b
+True
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; id(a)
+12777000
+&gt;&gt;&gt; id(b)
+12777000</code></pre>
+<h2 id="break-和-continue"><a href="#break-和-continue" class="headerlink" title="break 和 continue"></a>break 和 continue</h2><p>break可以提前结束一层循环，continue可以提前结束一次循环。</p>
+<h2 id="循环else"><a href="#循环else" class="headerlink" title="循环else"></a>循环else</h2><h2 id="assert"><a href="#assert" class="headerlink" title="assert"></a>assert</h2><p><code>assert 要判断表达式, &#39;字符串&#39;</code></p>
+<pre><code class="python">i = 0
+mySum = 0
+while i &lt; 5:
+    mySum += i
+    i += 1
+
+assert mySum == 15, &#39;mySum不等于15&#39;
+print(&#39;mySum = {}&#39;.format(mySum))</code></pre>
+<p>输出结果：</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;d:/Projects/ch04/4.17-assert.py&quot;, line 9, in &lt;module&gt;
+    assert mySum == 15, &#39;mySum不等于15&#39;
+AssertionError: mySum不等于15</code></pre><p><strong>当判断的表达式为真时，assert语句不做任何动作，当表达式为假时，会触发异常，并将字符串内容输出。字符串可以省略。</strong></p>
+<h2 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h2><h3 id="find-和-index"><a href="#find-和-index" class="headerlink" title="find 和 index"></a>find 和 index</h3><p>find: 查找字符串，严格区分大小写，返回值为字符串第一次出现所在的索引，后面的不管；未找到字符串，返回-1<br>index: 基本等同于find，区别：如果index查找不到，给出异常错误。</p>
+<h3 id="列表的添加-插入-删除"><a href="#列表的添加-插入-删除" class="headerlink" title="列表的添加/插入/删除"></a>列表的添加/插入/删除</h3><pre><code class="python">mylist = [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;]
+mylist.append(&#39;defg&#39;)  # [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;, &#39;defg&#39;]
+
+# append 添加，把添加内容直接作为元素添加
+appendlist = [&#39;aaa&#39;, &#39;bbb&#39;]
+mylist.append(appendlist)   # [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;, [&#39;aaa&#39;, &#39;bbb&#39;]]
+
+# extend 添加，把列表拆成元素添加
+extendlist = [&#39;aaa&#39;, &#39;bbb&#39;]
+mylist.extend(extendlist)   # [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;, &#39;aaa&#39;, &#39;bbb&#39;]
+
+# insert 在index位置前插入元素
+mylist.insert(1, &#39;defg&#39;)    # [&#39;abcd&#39;, &#39;defg&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;]
+
+# insert对于列表的插入，等同于append做法
+mylist.insert(1, appendlist)   # [&#39;abcd&#39;, [&#39;aaa&#39;, &#39;bbb&#39;], &#39;zhangsan&#39;, &#39;jiangning&#39;]
+
+# 对列表元素进行修改，使用索引定位到元素，直接赋值修改
+mylist[1] = &#39;lisi&#39;  [&#39;abcd&#39;, &#39;lisi&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;]
+
+# del删除给定下标的元素
+mylist = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;]
+del(mylist[1])   # [&#39;a&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;]
+
+# pop删除最后一个或指定索引的元素
+mylist.pop()  # [&#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
+
+# remove 删除指定值的元素
+# 一次只删除一个
+mylist.remove(&#39;a&#39;)    # [&#39;c&#39;, &#39;a&#39;]
+mylist.remove(&#39;a&#39;)    # [&#39;c&#39;]</code></pre>
+<h3 id="sort-sorted-reverse-reversed"><a href="#sort-sorted-reverse-reversed" class="headerlink" title="sort()  sorted()  reverse()  reversed()"></a>sort()  sorted()  reverse()  reversed()</h3><ul>
+<li><p>sort方法和sorted函数：排序使用<br>sort方法: 列表对象有一个sort()方法，实现将原列表进行一个排序，然后return，因为python 默认return返回一个None,所以非要将lst.sort()指向一个变量，那么这个变量值就是None<br><img src="https://i.loli.net/2019/11/06/uDiWtI1LMxeofac.png" alt="sort方法" title="sort方法"><br>sorted函数: sorted()是一个函数，即面向过程，将排序过程进行一个封装，按照不同的对象进行处理，不同的对象最后统一都是以列表的形式返回数据，即 return a_lst<br><img src="https://i.loli.net/2019/11/06/gCmXtq2okPy1McI.png" alt="sorted函数" title="sorted函数"></p>
+</li>
+<li><p>reverse方法和reversed函数：反转序列使用<br>reverse方法: 实现与sort()方法基本一致，功能的差异是对一个列表进行反转然后return，同样因为python 默认return返回一个None,所以当非要将lst.reverse()指向一个变量，那么这个变量值也是None<br><img src="https://i.loli.net/2019/11/06/RICP3bFkplZvUnV.png" alt="reverse方法" title="reverse方法"><br>reversed函数: 与sorted函数不同的是，reversed函数不是返回一个反转后的列表或者字符串，而是返回一个内存对象，且不支持字典的反转， 返回反向迭代器<br><img src="https://i.loli.net/2019/11/06/JHT9bL6o8f4YryM.png" alt="reversed函数" title="reversed函数"></p>
+</li>
+</ul>
+<p>sort和reverse是列表对象的方法，列表对象独有的方法，并且这两种方法都是在原列表上进行操作，并直接返回，返回值为None<br>sorted函数是支持字符串，字典，列表对象的排序，不在原列表上排序，而是返回一个新的列表，reveresd函数较为特殊，返回一个内存对象，而不是反转后的值</p>
+<h2 id="dict-key-和-dict-get-key"><a href="#dict-key-和-dict-get-key" class="headerlink" title="dict[key] 和 dict.get(key)"></a>dict[key] 和 dict.get(key)</h2><p>一般对于字典取值会有dict[key]的方法取值，但是如果键key不存在，则会出现报错</p>
+<pre><code class="python">&gt;&gt;&gt;a = {&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}
+
+&gt;&gt;&gt;a[&#39;one&#39;]           
+1
+
+&gt;&gt;&gt;a[&#39;four&#39;]           
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: &#39;four&#39;</code></pre>
+<p>因为 dict[key] 的方式在无法判断是否存在 key 的情况下会出现 KeyError ，所以 可以使用dict.get(key[,default]) 的方法。</p>
+<p>dict.get(key[,default]) 会查询字典中的key键，要是存在key键，则返回key键的值，要是没有key键，则返回 default， 若是没有 default，则返回 None。</p>
+<pre><code class="python">&gt;&gt;&gt; a.get(&#39;four&#39;)   # 返回None
+
+&gt;&gt;&gt; a.get(&#39;four&#39;,&#39;can not find four&#39;)   # 返回default
+&#39;can not find four&#39;
+
+&gt;&gt;&gt;a  # 使用dict.get()后dict不变
+{&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}</code></pre>
+<p><em>dict.setdefault(key[,default]) 表示：如果dict中存在key，则返回key的值， 如果不存在key，则返回default的值，并且在dict中增加 key: default 键值对，如果 default 不存在，则在dict增加 key:None 的键值对。</em></p>
+<pre><code class="python">&gt;&gt;&gt;a
+{&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}
+&gt;&gt;&gt; a.setdefault(&#39;four&#39;,4)     # a 没有 &#39;four&#39;键，返回default, a 增加&#39;four&#39;:4键值对
+4
+&gt;&gt;&gt; a  
+{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3, &#39;four&#39;: 4}
+&gt;&gt;&gt; a.setdefault(&#39;five&#39;)     # a没有&#39;five&#39;键，没有default，返回None，a增加&#39;five&#39;:None键值对
+&gt;&gt;&gt; a
+{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3, &#39;four&#39;: 4, &#39;five&#39;: None}
+&gt;&gt;&gt; a.setdefault(&#39;one&#39;)
+1
+&gt;&gt;&gt; a
+{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3, &#39;four&#39;: 4, &#39;five&#39;: None}</code></pre>
+<h2 id="字典删除"><a href="#字典删除" class="headerlink" title="字典删除"></a>字典删除</h2><ul>
+<li>clear 清空字典的内容，字典还在  dict.clear()</li>
+<li>del:</li>
+</ul>
+<ul>
+<li>del(dict) 将删除整个字典</li>
+<li>del(dict[‘key’])  删除的是键值对，是整个元素</li>
+</ul>
+<h2 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h2><h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>[起始位置:结束位置:步长]<br>步长到达位置的元素被取出，如果超出结束位置的话，结束，不报错，超出的部分取不到元素</p>
 
   </article>
   
@@ -272,7 +417,7 @@ print(&#39;type&#39;,type(B()) == A)     #  type False</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573038450419"></script>
+<script src="/js/app.js?v=1573042576472"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
