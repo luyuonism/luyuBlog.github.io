@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>文章归档：2019/6 - Lu Ruijie&#39;s Personal Homepage</title>
+  <title>interview - Lu Ruijie&#39;s Personal Homepage</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,12 +11,18 @@
   
 
   <link rel="shortcut icon" href="/timg.ico" type="image/png" />
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Lu Ruijie&#39;s Personal Homepage">
-<meta property="og:url" content="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;archives&#x2F;2019&#x2F;06&#x2F;index.html">
+  <meta name="description" content="python 学习之路">
+<meta name="keywords" content="python,interview">
+<meta property="og:type" content="article">
+<meta property="og:title" content="interview">
+<meta property="og:url" content="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2018&#x2F;07&#x2F;05&#x2F;interview&#x2F;index.html">
 <meta property="og:site_name" content="Lu Ruijie&#39;s Personal Homepage">
+<meta property="og:description" content="python 学习之路">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
+<meta property="og:updated_time" content="2019-11-06T11:04:45.708Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
    
@@ -24,7 +30,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573038450340">
+  <link rel="stylesheet" href="/css/style.css?v=1573038450413">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -164,33 +170,93 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <section class="nexmoe-posts" id="brand-waterfall">
-    
-    <div class="nexmoe-post">
-        <a href="/2019/06/05/python-f-string/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="https://i.loli.net/2019/11/05/brs62McO7aSA8Lk.png" alt="python f-string式格式化">
-                
-                <h1>python f-string式格式化</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2019年06月05日</a>
-            <a><i class="nexmoefont icon-areachart"></i>0 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-        </div>
-        <article>
-            
-            
-            
-        </article>
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://i.loli.net/2019/11/06/xjzsDoA6Ybn9eim.png">
+        
+        <h1>interview</h1>
     </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月05日</a>
+    <a><i class="nexmoefont icon-areachart"></i>424 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 2 分钟</a>
     
-</section>
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/interview/" rel="tag">interview</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
+    
+  </div>
+  <article>
+    <p>python 学习之路</p>
+<a id="more"></a>
+<h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="with"><a href="#with" class="headerlink" title="with"></a>with</h3><p>with语句实质是上下文管理。</p>
+<ol>
+<li>上下文管理协议。包含方法<strong>enter</strong>()和<strong>exit</strong>(),支持该协议对象要实现这两个方法。</li>
+<li>上下文管理器，定义执行with语句时要建立的运行时上下文，负责执行with语句块上下文中的进入与退出操作。</li>
+<li>进入上下文的时候执行<strong>enter</strong>方法，如果设置as var语句，var变量接受<strong>enter</strong>方法返回值。</li>
+<li>如果运行时发生了异常，就退出上下文管理器。调用管理器<strong>exit</strong>方法。</li>
+</ol>
+<p>但是with本身并没有异常捕获的功能，同时如果发生了运行时异常，它照样可以关闭文件释放资源。</p>
+<p>应用场景: 1、文件操作。2、进程线程之间互斥对象。3、支持上下文其他对象</p>
+<h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><ul>
+<li>yield 是一个类似 return 的关键字，只是这个函数返回的是个生成器</li>
+<li>当你调用这个函数的时候，函数内部的代码并不立马执行 ，这个函数只是返回一个生成器对象</li>
+<li>当你使用for进行迭代的时候，函数中的代码才会执行</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="https://i.loli.net/2019/11/06/aGwNEdLhom9B4QM.png" alt="常用数据类型" title="常用数据类型"></p>
+<h3 id="type-和-instance"><a href="#type-和-instance" class="headerlink" title="type() 和 instance()"></a>type() 和 instance()</h3><ul>
+<li>type() 不会认为子类是一种父类类型，不考虑继承关系。</li>
+<li>isinstance() 会认为子类是一种父类类型，考虑继承关系。<br>如果要判断两个类型是否相同推荐使用 isinstance()。</li>
+</ul>
+<pre><code class="python">a = 2
 
+print(isinstance(a,int))   # True
+print(isinstance(a,str))   # False
+
+
+class A:
+    pass
+
+class B(A):
+    pass
+
+print(&quot;isinstance&quot;,isinstance(A(),A))   # isinstance True
+print(&quot;type&quot;,type(A())  == A)    # type True
+
+print(&#39;isinstance&#39;,isinstance(B(),A) )   # isinstance True
+print(&#39;type&#39;,type(B()) == A)     #  type False</code></pre>
+
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>ruijielu<br>
+<strong>本文链接：</strong><a href="https://luyuonism.github.io/2018/07/05/interview/" title="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2018&#x2F;07&#x2F;05&#x2F;interview&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2018&#x2F;07&#x2F;05&#x2F;interview&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '6697f1e2bc68a9625fed',
+        clientSecret: '173e837a4a0788e2d0c2ecfe68911cd3a3efc2d1',
+        id: window.location.pathname,
+        repo: 'https://luyuonism.github.io',
+        owner: 'luyuonism',
+        admin: 'luyuonism'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+</div>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
@@ -206,7 +272,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573038450348"></script>
+<script src="/js/app.js?v=1573038450419"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

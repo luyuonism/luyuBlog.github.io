@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luyuonism.github.io/"/>
-  <updated>2019-11-05T03:37:04.436Z</updated>
+  <updated>2019-11-06T06:01:32.325Z</updated>
   <id>https://luyuonism.github.io/</id>
   
   <author>
@@ -21,20 +21,21 @@
     <link href="https://luyuonism.github.io/2019/11/05/django-STATIC_ROOT/"/>
     <id>https://luyuonism.github.io/2019/11/05/django-STATIC_ROOT/</id>
     <published>2019-11-05T02:25:49.382Z</published>
-    <updated>2019-11-05T03:37:04.436Z</updated>
+    <updated>2019-11-06T06:01:32.325Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="MEDIA-ROOT："><a href="#MEDIA-ROOT：" class="headerlink" title="MEDIA_ROOT："></a>MEDIA_ROOT：</h3><p>在说STATIC_ROOT之前，必须得提一下MEDIA_ROOT，在配置中，当你需要在你的项目中按照你心中的目录来存储文件时，MEDIA_ROOT是必不可少的。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件存储配置</span></span><br><span class="line">MEDIA_URL = <span class="string">'/media/'</span></span><br><span class="line">MEDIA_ROOT = os.path.join(BASE_DIR, <span class="string">'media'</span>) <span class="comment"># 默认根目录</span></span><br></pre></td></tr></table></figure><p>通过在setting.py文件中添加如上设置，就会设置好你需要放置文件的默认根目录</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image = models.ImageField(upload_to=<span class="string">"image/%Y/%m"</span>, default=u<span class="string">"image/default.png"</span>, max_length=100)</span><br></pre></td></tr></table></figure><p>上面是一个数据库模型的字段代码，当你使用upload_to这个属性的时候，django会自动解析，生成相对路径，保存在MEDIA_ROOT设置的根目录下</p><h3 id="STATIC-ROOT"><a href="#STATIC-ROOT" class="headerlink" title="STATIC_ROOT:"></a>STATIC_ROOT:</h3><p>那为什么要使用STATIC_ROOT呢，是因为当你设置中DEBUG为True时，django会自动为你静态文件代理，不过当DEBUG为False时，意味着你要进入生产环境，那么，你就必须使用STATIC_ROOT来指明你的静态文件在哪里，就像MEDIA_ROOT一样。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = <span class="string">'/static/'</span></span><br><span class="line">STATICFILES_DIRS = [</span><br><span class="line">    os.path.join(BASE_DIR, <span class="string">"static"</span>)</span><br><span class="line">]</span><br><span class="line">STATIC_ROOT = os.path.join(BASE_DIR, <span class="string">"static"</span>)</span><br></pre></td></tr></table></figure><p>在setting.py文件中添加上面代码，并且在urls.py中添加下面代码即可</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 配置静态文件代理</span><br><span class="line">    url(r&apos;^static/(?P&lt;path&gt;.*)$&apos;, serve, &#123;&apos;document_root&apos;: STATIC_ROOT&#125;),</span><br></pre></td></tr></table></figure><h2 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h2><p>详细介绍STATIC_ROOT, <a href="https://blog.csdn.net/alxandral_brother/article/details/52202270" target="_blank" rel="noopener">点击这里</a></p>]]></content>
+    <content type="html"><![CDATA[<p>关于django静态文件的配置说明————STATIC_ROOT和STATIC_URL以及STATICFILES_DIRS</p><a id="more"></a><h3 id="MEDIA-ROOT："><a href="#MEDIA-ROOT：" class="headerlink" title="MEDIA_ROOT："></a>MEDIA_ROOT：</h3><p>在说STATIC_ROOT之前，必须得提一下MEDIA_ROOT，在配置中，当你需要在你的项目中按照你心中的目录来存储文件时，MEDIA_ROOT是必不可少的。</p><pre><code class="python"># 文件存储配置MEDIA_URL = &#39;/media/&#39;MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;) # 默认根目录</code></pre><p>通过在setting.py文件中添加如上设置，就会设置好你需要放置文件的默认根目录</p><pre><code class="python">image = models.ImageField(upload_to=&quot;image/%Y/%m&quot;, default=u&quot;image/default.png&quot;, max_length=100)</code></pre><p>上面是一个数据库模型的字段代码，当你使用upload_to这个属性的时候，django会自动解析，生成相对路径，保存在MEDIA_ROOT设置的根目录下</p><h3 id="STATIC-ROOT"><a href="#STATIC-ROOT" class="headerlink" title="STATIC_ROOT:"></a>STATIC_ROOT:</h3><p>那为什么要使用STATIC_ROOT呢，是因为当你设置中DEBUG为True时，django会自动为你静态文件代理，不过当DEBUG为False时，意味着你要进入生产环境，那么，你就必须使用STATIC_ROOT来指明你的静态文件在哪里，就像MEDIA_ROOT一样。</p><pre><code class="python">STATIC_URL = &#39;/static/&#39;    STATICFILES_DIRS = [    os.path.join(BASE_DIR, &quot;static&quot;)]STATIC_ROOT = os.path.join(BASE_DIR, &quot;static&quot;)</code></pre><p>在setting.py文件中添加上面代码，并且在urls.py中添加下面代码即可</p><pre><code class="python"># 配置静态文件代理    url(r&#39;^static/(?P&lt;path&gt;.*)$&#39;, serve, {&#39;document_root&#39;: STATIC_ROOT}),</code></pre><h2 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h2><p>详细介绍STATIC_ROOT, <a href="https://blog.csdn.net/alxandral_brother/article/details/52202270" target="_blank" rel="noopener">点击这里</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;MEDIA-ROOT：&quot;&gt;&lt;a href=&quot;#MEDIA-ROOT：&quot; class=&quot;headerlink&quot; title=&quot;MEDIA_ROOT：&quot;&gt;&lt;/a&gt;MEDIA_ROOT：&lt;/h3&gt;&lt;p&gt;在说STATIC_ROOT之前，必须得提一下MEDIA_ROOT，在
-      
+      &lt;p&gt;关于django静态文件的配置说明————STATIC_ROOT和STATIC_URL以及STATICFILES_DIRS&lt;/p&gt;
     
     </summary>
     
     
+    
+      <category term="python" scheme="https://luyuonism.github.io/tags/python/"/>
+    
+      <category term="django" scheme="https://luyuonism.github.io/tags/django/"/>
     
   </entry>
   
@@ -43,7 +44,7 @@
     <link href="https://luyuonism.github.io/2019/06/05/python-f-string/"/>
     <id>https://luyuonism.github.io/2019/06/05/python-f-string/</id>
     <published>2019-06-04T16:00:00.000Z</published>
-    <updated>2019-11-05T06:04:16.266Z</updated>
+    <updated>2019-11-06T01:50:21.156Z</updated>
     
     <summary type="html">
     
@@ -54,20 +55,40 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://luyuonism.github.io/2018/07/13/hello-world/"/>
-    <id>https://luyuonism.github.io/2018/07/13/hello-world/</id>
-    <published>2018-07-13T12:46:25.000Z</published>
-    <updated>2019-11-05T03:37:26.104Z</updated>
+    <title>interview</title>
+    <link href="https://luyuonism.github.io/2018/07/05/interview/"/>
+    <id>https://luyuonism.github.io/2018/07/05/interview/</id>
+    <published>2018-07-05T04:03:43.000Z</published>
+    <updated>2019-11-06T11:04:45.708Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<p>python 学习之路</p><a id="more"></a><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="with"><a href="#with" class="headerlink" title="with"></a>with</h3><p>with语句实质是上下文管理。</p><ol><li>上下文管理协议。包含方法<strong>enter</strong>()和<strong>exit</strong>(),支持该协议对象要实现这两个方法。</li><li>上下文管理器，定义执行with语句时要建立的运行时上下文，负责执行with语句块上下文中的进入与退出操作。</li><li>进入上下文的时候执行<strong>enter</strong>方法，如果设置as var语句，var变量接受<strong>enter</strong>方法返回值。</li><li>如果运行时发生了异常，就退出上下文管理器。调用管理器<strong>exit</strong>方法。</li></ol><p>但是with本身并没有异常捕获的功能，同时如果发生了运行时异常，它照样可以关闭文件释放资源。</p><p>应用场景: 1、文件操作。2、进程线程之间互斥对象。3、支持上下文其他对象</p><h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><ul><li>yield 是一个类似 return 的关键字，只是这个函数返回的是个生成器</li><li>当你调用这个函数的时候，函数内部的代码并不立马执行 ，这个函数只是返回一个生成器对象</li><li>当你使用for进行迭代的时候，函数中的代码才会执行</li></ul><h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="https://i.loli.net/2019/11/06/aGwNEdLhom9B4QM.png" alt="常用数据类型" title="常用数据类型"></p><h3 id="type-和-instance"><a href="#type-和-instance" class="headerlink" title="type() 和 instance()"></a>type() 和 instance()</h3><ul><li>type() 不会认为子类是一种父类类型，不考虑继承关系。</li><li>isinstance() 会认为子类是一种父类类型，考虑继承关系。<br>如果要判断两个类型是否相同推荐使用 isinstance()。</li></ul><pre><code class="python">a = 2print(isinstance(a,int))   # Trueprint(isinstance(a,str))   # Falseclass A:    passclass B(A):    passprint(&quot;isinstance&quot;,isinstance(A(),A))   # isinstance Trueprint(&quot;type&quot;,type(A())  == A)    # type Trueprint(&#39;isinstance&#39;,isinstance(B(),A) )   # isinstance Trueprint(&#39;type&#39;,type(B()) == A)     #  type False</code></pre>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
+      &lt;p&gt;python 学习之路&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://luyuonism.github.io/tags/python/"/>
+    
+      <category term="interview" scheme="https://luyuonism.github.io/tags/interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://luyuonism.github.io/2018/04/13/hello-world/"/>
+    <id>https://luyuonism.github.io/2018/04/13/hello-world/</id>
+    <published>2018-04-13T12:46:25.000Z</published>
+    <updated>2019-11-06T10:20:47.574Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><a id="more"></a><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
