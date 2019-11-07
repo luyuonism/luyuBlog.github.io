@@ -99,6 +99,52 @@
   </entry>
   
   <entry>
+    <title>Django</title>
+    <link href="https://luyuonism.github.io/2018/06/05/django/"/>
+    <id>https://luyuonism.github.io/2018/06/05/django/</id>
+    <published>2018-06-05T01:11:43.000Z</published>
+    <updated>2019-11-07T07:36:35.940Z</updated>
+    
+    <content type="html"><![CDATA[<p>Django–Django是一个由Python编写的开放源代码的Web应用框架。</p><a id="more"></a><h1 id="创建博客"><a href="#创建博客" class="headerlink" title="创建博客"></a>创建博客</h1><p><em>文章 分类 评论 搜索 统计</em></p><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><p>从用户的角度，通过访问不同的url，来得到不同的网页。<br>从开发者的角度，通过解析不同的url，来输出（render/display）该url指向的网页内容。</p><h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>用户请求(request) –&gt; 通过访问不同的url<br>响应(response)的内容，也就是用户看到的内容 –&gt; 用户最终看到的内容</p><p>http  用户发起请求 –&gt; 响应：浏览器获得响应内容，解析html，css，javascript</p><p>1.获得url请求 request<br>2.解析request （拿到url，解析url，让处理该url的方法去处理request）<br>3.拼接response ，返回给用户<br>4.浏览器获得响应内容，解析html，css，javascript</p><h2 id="django框架"><a href="#django框架" class="headerlink" title="django框架"></a>django框架</h2><p>创建项目:</p><pre><code class="django">django-admin startproject 项目名</code></pre><p>创建一个testdj目录,目录的结构为：</p><pre><code>testdj/    manage.py    一个让你用各种方式管理 Django 项目的命令行工具。    testdj/        一个纯 Python 包        __init__.py     一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包。        settings.py     Django 项目的配置文件。        urls.py     Django 项目的 URL 声明，就像你网站的“目录”。        wsgi.py     作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。</code></pre><p>启动服务</p><pre><code class="python">python manage.py runserver</code></pre><p>将会输出如下结果：</p><pre><code class="python">python manage.py runserverPerforming system checks...System check identified no issues (0 silenced).May 10, 2018 - 17:21:16Django version 2.0.5, using settings &#39;testdj.settings&#39;Starting development server at http://127.0.0.1:8000/Quit the server with CTRL-BREAK.</code></pre><p>更换端口</p><pre><code class="python">python manage.py runserver 8080</code></pre><p>如果想要修改服务器监听的IP，在端口之前输入新的</p><pre><code class="python">python manage.py runserver 0.0.0.0:8000</code></pre><ul><li>做好url映射，</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Django–Django是一个由Python编写的开放源代码的Web应用框架。&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://luyuonism.github.io/tags/python/"/>
+    
+      <category term="django" scheme="https://luyuonism.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySql</title>
+    <link href="https://luyuonism.github.io/2018/06/05/sql/"/>
+    <id>https://luyuonism.github.io/2018/06/05/sql/</id>
+    <published>2018-06-05T01:11:43.000Z</published>
+    <updated>2019-11-07T06:21:52.475Z</updated>
+    
+    <content type="html"><![CDATA[<p>结构化查询语言</p><a id="more"></a><h1 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h1><pre><code class="mysql">create database shop;</code></pre><h1 id="一-数据库与SQL"><a href="#一-数据库与SQL" class="headerlink" title="一 数据库与SQL"></a>一 数据库与SQL</h1><h2 id="数据库是什么"><a href="#数据库是什么" class="headerlink" title="数据库是什么"></a>数据库是什么</h2><h2 id="数据库的结构"><a href="#数据库的结构" class="headerlink" title="数据库的结构"></a>数据库的结构</h2><h2 id="SQL概要"><a href="#SQL概要" class="headerlink" title="SQL概要"></a>SQL概要</h2><h2 id="表的创建"><a href="#表的创建" class="headerlink" title="表的创建"></a>表的创建</h2><h2 id="表的删除和更新"><a href="#表的删除和更新" class="headerlink" title="表的删除和更新"></a>表的删除和更新</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;结构化查询语言&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+      <category term="python" scheme="https://luyuonism.github.io/tags/python/"/>
+    
+      <category term="django" scheme="https://luyuonism.github.io/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
     <link href="https://luyuonism.github.io/2018/04/13/hello-world/"/>
     <id>https://luyuonism.github.io/2018/04/13/hello-world/</id>
