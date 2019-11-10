@@ -24,7 +24,10 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;07&#x2F;Ofp6F2CSZLqTg8h.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;07&#x2F;xVj6tmMR4qAyG1C.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;07&#x2F;qwRQChyBemLnOix.png">
-<meta property="og:updated_time" content="2019-11-07T12:14:24.385Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;09&#x2F;wtbLJoiRTNW8Fau.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;09&#x2F;8UgS7sJWwDftc1r.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;09&#x2F;XRjFVdeGoNfpbW4.png">
+<meta property="og:updated_time" content="2019-11-10T09:13:06.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;07&#x2F;1cIVjQgrBLUwTE8.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -34,7 +37,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573129450409">
+  <link rel="stylesheet" href="/css/style.css?v=1573380570244">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -187,8 +190,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年06月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>2,635 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 10 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>6,402 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 26 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/django/" rel="tag">django</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -227,7 +230,27 @@ Quit the server with CTRL-BREAK.</code></pre>
 <pre><code class="python">python manage.py runserver 8080</code></pre>
 <p>如果想要修改服务器监听的IP，在端口之前输入新的</p>
 <pre><code class="python">python manage.py runserver 0.0.0.0:8000</code></pre>
-<h2 id="使用django开发个人博客"><a href="#使用django开发个人博客" class="headerlink" title="使用django开发个人博客"></a>使用django开发个人博客</h2><p>首先，博客的页面属于前端，不想自己写前端代码，怎么办???</p>
+<p>简述django的MTV：</p>
+<pre><code>MVC
+          用户-------------------------------\
+          |                     响应给用户显示 \
+          |                                   |
+发起请求  /    /----控制器将数据显示在视图上----View
+        /    / 
+    Controller ------\ 
+    /                 \
+   / 按照请求访问数据库  \
+  /                     |  从数据库返回数据给控制器
+Model -------------------
+
+MTV
+  Model &lt;-----&lt;去models里取数据&lt;-----Views&lt;----&lt;根据url匹配相应的视图函数&lt;----url控制器&lt;----在页面输入访问的URL&lt;--\
+    | \                              / \                                                                      |
+    |   &gt;------&gt;将数据返回给视图&gt;-----&gt;   &gt;----&gt;把要展示的数据返回给模板&gt;----&gt; Templates----&gt;模板就是html文件---&gt; 用户
+    |
+去数据库里取数据
+    |
+   数据库</code></pre><h2 id="使用django开发个人博客"><a href="#使用django开发个人博客" class="headerlink" title="使用django开发个人博客"></a>使用django开发个人博客</h2><p>首先，博客的页面属于前端，不想自己写前端代码，怎么办???</p>
 <h3 id="抓取网站源码工具"><a href="#抓取网站源码工具" class="headerlink" title="抓取网站源码工具"></a>抓取网站源码工具</h3><p><a href="'https://smalltool.github.io'">仿站小工具</a>是通过网址下载静态网页的工具。从输入的网址下载html代码，提取出JS、Css、Image、Picture、Flash等静态文件网址，再从下载完好的Css代码中提取出Image静态文件网址，通过网址下载静态文件，根据软件设置好的保存规则，自动修正html和css代码链接路径，最终这些静态文件被按分类保存到电脑文件夹。</p>
 <ul>
 <li>添加网址<br>输入的网址是要抓取页面网址，相对路径是主域名后边的路径，文件名即抓取后的文件保存的名字<br><img src="https://i.loli.net/2019/11/07/1cIVjQgrBLUwTE8.png" alt="添加地址.png" title="添加网址"></li>
@@ -354,6 +377,454 @@ K： 网站页面Keywords，也即网站涵盖的主题</code></pre><p>则需要
 <p>再看看，右侧还有一个友情链接功能，需要一个表，友链和其它表也没啥关系 暂且称作 FriendLink</p>
 <p>因此，通过上述分析，我们可以确定出这些数据表，博客（Article）、分类（Category）与标签（Tag）、导航(Bigcategory)、文章关键词 (Keyword)、公告(Activate)、幻灯片(Carousel)、友链(FriendLink)</p>
 <h4 id="编写-luyu-应用模型"><a href="#编写-luyu-应用模型" class="headerlink" title="编写 luyu 应用模型"></a>编写 luyu 应用模型</h4><p>blog -&gt; luyu -&gt; models.py</p>
+<pre><code class="python">from django.db import models
+from django.conf import settings
+from django.shortcuts import reverse
+
+import markdown
+import re</code></pre>
+<p>由于 Article 表包含外键与多对多关系，因此首先应当建立另外两个表：</p>
+<p>分类（Category）表的创建：</p>
+<p>由于 Category 分类表包含外键，因此首先需要创建导航菜单表 Bigcategory</p>
+<pre><code class="python"># 网站导航菜单栏分类表
+class BigCategory(models.Model):
+    # 导航名称
+    name = models.CharField(&#39;文章大分类&#39;, max_length=20)
+    # 用作文章的访问路径，每篇文章有独一无二的标识，下同
+    slug = models.SlugField(unique=True)
+    # 分类页描述
+    description = models.TextField(&#39;描述&#39;, max_length=240, default=settings.SITE_DESCRIPTION,
+                                 help_text=&#39;用来作为SEO中description,长度参考SEO标准&#39;)
+    # 分类页Keywords
+    keywords = models.TextField(&#39;关键字&#39;, max_length=240, default=settings.SITE_KEYWORDS,
+                              help_text=&#39;用来作为SEO中keywords,长度参考SEO标准&#39;)
+
+    class Meta:
+        verbose_name = &#39;大分类&#39;
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.name
+
+
+# 导航栏，分类下的下拉擦菜单分类
+class Category(models.Model):
+
+    # 分类名字
+    name = models.CharField(&#39;文章分类&#39;, max_length=20)
+    # slug 用作分类路径，对一无二
+    slug = models.SlugField(unique=True)
+    # 分类栏目页描述
+    description = models.TextField(&#39;描述&#39;, max_length=240, default=settings.SITE_DESCRIPTION,
+                                 help_text=&#39;用来作为SEO中description,长度参考SEO标准&#39;)
+
+    # 对应导航菜单外键
+    bigcategory = models.ForeignKey(BigCategory, verbose_name=&#39;大分类&#39;, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = &#39;分类&#39;
+        verbose_name_plural = verbose_name
+        ordering = [&#39;name&#39;]
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse(&#39;blog:category&#39;, kwargs={&#39;slug&#39;: self.slug, &#39;bigslug&#39;: self.bigcategory.slug})
+
+    def get_article_list(self):
+        return Article.objects.filter(category=self)</code></pre>
+<p>标签（Tag）表的创建：</p>
+<pre><code class="python"># 文章标签
+class Tag(models.Model):
+    name = models.CharField(&#39;文章标签&#39;, max_length=20)
+    slug = models.SlugField(unique=True)
+    description = models.TextField(&#39;描述&#39;, max_length=240, default=settings.SITE_DESCRIPTION,
+                                 help_text=&#39;用来作为SEO中description,长度参考SEO标准&#39;)
+
+    class Meta:
+        verbose_name = &#39;标签&#39;
+        verbose_name_plural = verbose_name
+        ordering = [&#39;id&#39;]
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse(&#39;blog:tag&#39;, kwargs={&#39;tag&#39;: self.name})
+
+    def get_article_list(self):
+        &quot;&quot;&quot;返回当前标签下所有发表的文章列表&quot;&quot;&quot;
+        return Article.objects.filter(tags=self)</code></pre>
+<p>标签（Keyword）表的创建：</p>
+<pre><code class="python"># 文章关键词，用来作为 SEO 中 keywords
+class Keyword(models.Model):
+    name = models.CharField(&#39;文章关键词&#39;, max_length=20)
+
+    class Meta:
+        verbose_name = &#39;关键词&#39;
+        verbose_name_plural = verbose_name
+        ordering = [&#39;name&#39;]
+
+    def __str__(self):
+        return self.name</code></pre>
+<p>博客（Article）表的创建：</p>
+<pre><code class="python"># 文章
+class Article(models.Model):
+    # 文章默认缩略图
+    IMG_LINK = &#39;/static/images/summary.jpg&#39;
+    # 文章作者
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=&#39;作者&#39;, on_delete=models.CASCADE)
+    title = models.CharField(max_length=150, verbose_name=&#39;文章标题&#39;)
+    summary = models.TextField(&#39;文章摘要&#39;, max_length=230, default=&#39;文章摘要等同于网页description内容，请务必填写...&#39;)
+    # 文章内容
+    body = models.TextField(verbose_name=&#39;文章内容&#39;)
+    img_link = models.CharField(&#39;图片地址&#39;, default=IMG_LINK, max_length=255)
+    create_date = models.DateTimeField(verbose_name=&#39;创建时间&#39;, auto_now_add=True)
+    update_date = models.DateTimeField(verbose_name=&#39;修改时间&#39;, auto_now=True)
+    views = models.IntegerField(&#39;阅览量&#39;, default=0)
+    loves = models.IntegerField(&#39;喜爱量&#39;, default=0)
+    # 文章唯一标识符
+    slug = models.SlugField(unique=True)
+    category = models.ForeignKey(Category, verbose_name=&#39;文章分类&#39;, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag, verbose_name=&#39;标签&#39;)
+    keywords = models.ManyToManyField(Keyword, verbose_name=&#39;文章关键词&#39;,
+                                    help_text=&#39;文章关键词，用来作为SEO中keywords，最好使用长尾词，3-4个足够&#39;)
+
+    class Meta:
+        verbose_name = &#39;文章&#39;
+        verbose_name_plural = verbose_name
+        ordering = [&#39;-create_date&#39;]
+
+    def __str__(self):
+        return self.title[:20]
+
+    def get_absolute_url(self):
+        return reverse(&#39;blog:article&#39;, kwargs={&#39;slug&#39;: self.slug})
+
+    def body_to_markdown(self):
+        return markdown.markdown(self.body, extensions=[
+            &#39;markdown.extensions.extra&#39;,
+            &#39;markdown.extensions.codehilite&#39;,
+        ])
+
+    def update_views(self):
+        self.views += 1
+        self.save(update_fields=[&#39;views&#39;])
+
+    def get_pre(self):
+        return Article.objects.filter(id__lt=self.id).order_by(&#39;-id&#39;).first()
+
+    def get_next(self):
+        return Article.objects.filter(id__gt=self.id).order_by(&#39;id&#39;).first()</code></pre>
+<p>为什么要用slug给文章起别名呢？这个可能暂且就认为只是为了提升逼格吧</p>
+<p>公告（Activate）表的创建：</p>
+<pre><code class="python"># 公告
+class Activate(models.Model):
+    text = models.TextField(&#39;公告&#39;, null=True)
+    is_active = models.BooleanField(&#39;是否开启&#39;, default=False)
+    add_date = models.DateTimeField(&#39;提交日期&#39;, auto_now_add=True)
+
+    class Meta:
+        verbose_name = &#39;公告&#39;
+        verbose_name_plural = verbose_name
+
+    def __str__(self):
+        return self.id</code></pre>
+<p>幻灯片（Carousel）表的创建：</p>
+<pre><code class="python"># 幻灯片
+class Carousel(models.Model):
+    number = models.IntegerField(&#39;编号&#39;, help_text=&#39;编号决定图片播放的顺序，图片不要多于5张&#39;)
+    title = models.CharField(&#39;标题&#39;, max_length=20, blank=True, null=True, help_text=&#39;标题可以为空&#39;)
+    content = models.CharField(&#39;描述&#39;, max_length=80)
+    img_url = models.CharField(&#39;图片地址&#39;, max_length=200)
+    url = models.CharField(&#39;跳转链接&#39;, max_length=200, default=&#39;#&#39;, help_text=&#39;图片跳转的超链接，默认#表示不跳转&#39;)
+
+    class Meta:
+        verbose_name = &#39;图片轮播&#39;
+        verbose_name_plural = verbose_name
+        # 编号越小越靠前，添加的时间约晚约靠前
+        ordering = [&#39;number&#39;, &#39;-id&#39;]
+
+    def __str__(self):
+        return self.content[:25]</code></pre>
+<p>友链（FriendLink）表的创建：</p>
+<pre><code class="python"># 友情链接表
+class FriendLink(models.Model):
+    name = models.CharField(&#39;网站名称&#39;, max_length=50)
+    description = models.CharField(&#39;网站描述&#39;, max_length=100, blank=True)
+    link = models.URLField(&#39;友链地址&#39;, help_text=&#39;请填写http或https开头的完整形式地址&#39;)
+    logo = models.URLField(&#39;网站LOGO&#39;, help_text=&#39;请填写http或https开头的完整形式地址&#39;, blank=True)
+    create_date = models.DateTimeField(&#39;创建时间&#39;, auto_now_add=True)
+    is_active = models.BooleanField(&#39;是否有效&#39;, default=True)
+    is_show = models.BooleanField(&#39;是否首页展示&#39;, default=False)
+
+    class Meta:
+        verbose_name = &#39;友情链接&#39;
+        verbose_name_plural = verbose_name
+        ordering = [&#39;create_date&#39;]
+
+    def __str__(self):
+        return self.name
+
+    def get_home_url(self):
+        &quot;&quot;&quot;提取友链的主页&quot;&quot;&quot;
+        u = re.findall(r&#39;(http|https://.*?)/.*?&#39;, self.link)
+        home_url = u[0] if u else self.link
+        return home_url
+
+    def active_to_false(self):
+        self.is_active=False
+        self.save(update_fields=[&#39;is_active&#39;])
+
+    def show_to_false(self):
+        self.is_show = True
+        self.save(update_fields=[&#39;is_show&#39;])</code></pre>
+<p>这里需要注意一下，luyu -&gt; models.py 中出现的 AUTH_USER_MODEL、SITE_DESCRIPTION、AUTH_USER_MODEL、SITE_KEYWORDS，把它们当作默认字段放在 setting.py 中，便于管理<br>blog -&gt; blog -&gt; settings.py</p>
+<pre><code class="python"># 网站描述，用于SEO
+SITE_DESCRIPTION = &quot;luyu的个人网站，记录python学习之路&quot;
+
+# 网站关键词，用于SEO
+SITE_KEYWORDS = &quot;luyuonism,luyu,网络,IT,技术,博客,Python&quot;</code></pre>
+<p>在文件首部 # 引入 settings.py 文件，即可使用这些字段</p>
+<pre><code class="python">from django.conf import settings</code></pre>
+<p>以上的类名代表了数据库表名，且继承了models.Model，类里面的字段代表数据表中的字段(name)，数据类型则由CharField（相当于varchar）、DateField（相当于datetime），max_length 参数限定长度。</p>
+<h4 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h4><ul>
+<li><p>标题应当限定长度，我们设定最大值为100</p>
+</li>
+<li><p>内容不用限定长度，因此用的是TextField字段</p>
+</li>
+<li><p>修改时间直接设定成，auto_now=True，在你修改时，会自动变成当前时间。</p>
+</li>
+<li><p>关于ForeignKey与ManyToManyField，查看<a href="https://docs.djangoproject.com/en/2.1/topics/db/models/" target="_blank" rel="noopener">Django官方文档</a> <a href="http://djangobook.py3k.cn/2.0/chapter05/" target="_blank" rel="noopener">Django中文文档</a></p>
+</li>
+</ul>
+<h4 id="编写-user-用户模型"><a href="#编写-user-用户模型" class="headerlink" title="编写 user 用户模型"></a>编写 user 用户模型</h4><p>blog -&gt; luyu -&gt; models.py 中文章有一个作者外键</p>
+<pre><code class="python">    author = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=&#39;作者&#39;, on_delete=models.CASCADE)</code></pre>
+<p>这个外键是网站注册用户，这样用户也可以有发文权限，考虑到以后会扩展用户功能，所以这里还是创建一个用户app比较好。<br>创建app不再赘述, 不要忘了创建app后去配置文件里注册用户app<br>blog -&gt; user -&gt; models.py</p>
+<pre><code class="python"># 继承 AbstractUser ，django 自带用户类，扩展用户个人网站字段，用户头像字段
+class Ouser(AbstractUser):
+    # 扩展用户个人网站字段
+    link = models.URLField(&#39;个人网址&#39;, blank=True, help_text=&#39;提示：网址必须填写以http开头的完整形式&#39;)
+    # 扩展用户头像字段
+    avatar = ProcessedImageField(upload_to=&#39;avatar/%Y/%m/%d&#39;,
+                                 default=&#39;avatar/default.png&#39;,
+                                 verbose_name=&#39;头像&#39;,
+                                 processors=[ResizeToFill(80, 80)]
+                                 )
+
+    class Meta:
+        verbose_name = &#39;用户&#39; # 定义网站管理后台表名
+        verbose_name_plural = verbose_name
+        ordering = [&#39;-id&#39;]
+
+
+    def __str__(self):
+        return self.username</code></pre>
+<h4 id="迁移-user-用户应用模型"><a href="#迁移-user-用户应用模型" class="headerlink" title="迁移 user 用户应用模型"></a>迁移 user 用户应用模型</h4><p>Terminal中执行命令</p>
+<pre><code class="python">python  manage.py  makemigrations
+python  manage.py  migrate</code></pre>
+<p>如遇以下问题，</p>
+<pre><code class="python">    File &quot;E:\\ProgramData\\Anaconda3\\lib\\site-packages\\imagekit\\registry.py&quot;, line 3, in &lt;module&gt;
+        from .utils import autodiscover, call_strategy_method
+ImportError: cannot import name &#39;autodiscover&#39;</code></pre>
+<p>解决办法：</p>
+<pre><code>E:\ProgramData\Anaconda3\Lib\site-packages\imagekit 中有一个utils文件和utils.py文件，两个文件名发生冲突产生歧义，将utils文件夹手动改为foo</code></pre><pre><code class="python">SystemCheckError: System check identified some issues:
+
+ERRORS:
+auth.User.groups: (fields.E304) Reverse accessor for &#39;User.groups&#39; clashes with reverse accessor for &#39;Ouser.groups&#39;.
+        HINT: Add or change a related_name argument to the definition for &#39;User.groups&#39; or &#39;Ouser.groups&#39;.
+auth.User.user_permissions: (fields.E304) Reverse accessor for &#39;User.user_permissions&#39; clashes with reverse accessor for &#39;Ouser.user_permissions&#39;.
+        HINT: Add or change a related_name argument to the definition for &#39;User.user_permissions&#39; or &#39;Ouser.user_permissions&#39;.
+user.Ouser.groups: (fields.E304) Reverse accessor for &#39;Ouser.groups&#39; clashes with reverse accessor for &#39;User.groups&#39;.
+        HINT: Add or change a related_name argument to the definition for &#39;Ouser.groups&#39; or &#39;User.groups&#39;.
+user.Ouser.user_permissions: (fields.E304) Reverse accessor for &#39;Ouser.user_permissions&#39; clashes with reverse accessor for &#39;User.user_permissions&#39;.
+        HINT: Add or change a related_name argument to the definition for &#39;Ouser.user_permissions&#39; or &#39;User.user_permissions&#39;.</code></pre>
+<p>解决办法:</p>
+<pre><code>抽象基类创建完成后, 没有在setting中声明, 或者声明错误
+setting.py 文件中添加一句 AUTH_USER_MODEL = &quot;user.Ouser&quot;</code></pre><pre><code class="python">django.db.migrations.exceptions.InconsistentMigrationHistory: Migration admin.0001_initial is applied before its dependency user.0001_initial on database &#39;default&#39;.</code></pre>
+<p>解决办法:</p>
+<pre><code>删库跑路，把所有表删掉之后，再次执行 python  manage.py  migrate</code></pre><p>以上，即可将新建的这些表添加到我们的数据库 blog 中：</p>
+<pre><code>auth_group, 
+auth_group_permissions,
+auth_permission,
+auth_user_groups,
+auth_user_user_permissions, 
+django_admin_log, 
+django_content_type, 
+django_migrations, 
+django_session,
+storm_activate,         # 公告表 
+storm_article,          # 新增的博文表
+storm_article_keywords, # 这个是博文与关键词的多对多关系表
+storm_article_tags,     # 这个是博文与标签的多对多关系表
+storm_bigcategory,      # 导航菜单大分类表
+storm_carousel,         # 幻灯片
+storm_category,         # 新增的分类表
+storm_friendlink,       # 友情链接
+storm_keyword,          # 关键词表
+storm_tag，              # 新增的标签表
+user_ouser,             # 新增扩展用户表
+user_ouser_groups,      # 自动产生
+user_ouser_user_permissions # 自动产生</code></pre><p>最后两个表示用户表继承了，Django自带的用户models产生的用户关系表<br>需要说明的是，这里我们只给出了最开始设计时考虑到的情况，在后续开发过程中，可以随时对其进行变更。当数据表信息变动时<br>再次执行</p>
+<pre><code class="python">python  manage.py  makemigrations
+python  manage.py  migrate</code></pre>
+<h3 id="通过admin管理后台"><a href="#通过admin管理后台" class="headerlink" title="通过admin管理后台"></a>通过admin管理后台</h3><p>Django 中一个最强大的部分是自动管理接口，在模型中读取元数据来提供一个强大的、生产就绪的接口，使内容提供者能立即用它向站点中添加内容，在这篇文档中，我们讨论如何去激活，使用和自定义Django的站点管理接口。</p>
+<h4 id="创建管理员账号"><a href="#创建管理员账号" class="headerlink" title="创建管理员账号"></a>创建管理员账号</h4><p>在浏览器中输入<a href="http://127.0.0.1:8000/admin" target="_blank" rel="noopener">http://127.0.0.1:8000/admin</a>,<br>便可进入到后台管理登录页面，如下图所示：<br><img src="https://i.loli.net/2019/11/09/wtbLJoiRTNW8Fau.png" alt="django登陆" title="django登陆"><br>首先，创建一个能登录管理页面的用户,</p>
+<pre><code class="python">python manage.py createsuperuser</code></pre>
+<p>键入你想要使用的用户名:</p>
+<pre><code>Username: admin</code></pre><p>然后提示你输入想要使用的邮件地址：</p>
+<pre><code>Email address: admin@example.com</code></pre><p>最后一步是输入密码。你会被要求输入两次密码，密码需要满足起码的强度。</p>
+<pre><code>Password:
+Password (again):
+Superuser created successfully.</code></pre><h4 id="注册模型到后台"><a href="#注册模型到后台" class="headerlink" title="注册模型到后台"></a>注册模型到后台</h4><p>登录后台后，我们看到此时的后台只有用户、组和最近动作，并没有我们之前创建的我的文章、分类、标签这些内容。<br><img src="https://i.loli.net/2019/11/09/8UgS7sJWwDftc1r.png" alt="django后台" title="django后台"><br>在admin.py中进行配置，将其在后台展现出来：<br>blog -&gt; luyu -&gt; admin.py</p>
+<pre><code class="python">from django.contrib import admin
+from .models import Article, Tag, Category, Carousel, Keyword, FriendLink, BigCategory
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    # 这个的作用是给出一个筛选机制，一般按照时间比较好
+    date_hierarchy = &#39;create_date&#39;
+
+    exclude = (&#39;views&#39;,)
+
+    # 在查看修改的时候显示的属性，第一个字段带有&lt;a&gt;标签，所以最好放标题
+    list_display = (&#39;id&#39;, &#39;title&#39;, &#39;author&#39;, &#39;create_date&#39;, &#39;update_date&#39;)
+
+    # 设置需要添加&lt;a&gt;标签的字段
+    list_display_links = (&#39;title&#39;,)
+
+    # 激活过滤器，这个很有用
+    list_filter = (&#39;create_date&#39;, &#39;category&#39;)
+
+    list_per_page = 50  # 控制每页显示的对象数量，默认是100
+
+    filter_horizontal = (&#39;tags&#39;, &#39;keywords&#39;)  # 给多选增加一个左右添加的框
+
+    # 限制用户权限，只能看到自己编辑的文章
+    def get_queryset(self, request):
+        qs = super(ArticleAdmin, self).get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(author=request.user)
+
+
+@admin.register(Tag)
+class TagAdmin(admin.ModelAdmin):
+    list_display = (&#39;name&#39;, &#39;id&#39;, &#39;slug&#39;)
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (&#39;name&#39;, &#39;id&#39;, &#39;slug&#39;)
+
+
+@admin.register(BigCategory)
+class BigCategoryAdmin(admin.ModelAdmin):
+    list_display = (&#39;name&#39;, &#39;id&#39;, &#39;slug&#39;)
+
+
+# 自定义管理站点的名称和URL标题
+admin.site.site_header = &#39;网站管理&#39;
+admin.site.site_title = &#39;博客后台管理&#39;
+
+
+@admin.register(Carousel)
+class CarouselAdmin(admin.ModelAdmin):
+    list_display = (&#39;number&#39;, &#39;title&#39;, &#39;content&#39;, &#39;img_url&#39;, &#39;url&#39;)
+
+
+@admin.register(Keyword)
+class KeywordAdmin(admin.ModelAdmin):
+    list_display = (&#39;name&#39;, &#39;id&#39;)
+
+
+@admin.register(FriendLink)
+class FriendLinkAdmin(admin.ModelAdmin):
+    list_display = (&#39;name&#39;, &#39;description&#39;, &#39;link&#39;, &#39;create_date&#39;, &#39;is_active&#39;, &#39;is_show&#39;)
+    date_hierarchy = &#39;create_date&#39;
+    list_filter = (&#39;is_active&#39;, &#39;is_show&#39;)</code></pre>
+<p>此时，再次刷新博客admin页面，即可看到我们创建的表：<br><img src="https://i.loli.net/2019/11/09/XRjFVdeGoNfpbW4.png" alt="刷新admin页面" title="刷新admin页面"><br>我们可以对其进行增加、修改、删除操作, admin 也是 Django 中最方便的一个特性。</p>
+<h3 id="博客首页开发"><a href="#博客首页开发" class="headerlink" title="博客首页开发"></a>博客首页开发</h3><h4 id="添加模板"><a href="#添加模板" class="headerlink" title="添加模板"></a>添加模板</h4><p>前面已经获取了 static、templates 文件，将 static 文件夹整个拷贝到博客项目根目录下，然后在将 templates 文件夹下的 html 文件全部拷贝到到 templates 目录下。</p>
+<h4 id="创建视图"><a href="#创建视图" class="headerlink" title="创建视图"></a>创建视图</h4><p>Django 中后端的控制都是在视图函数中进行的，也就是 view.py，每创建一个 app，该 app 目录下都会有一个view.py，我们主要就是在这里进行后端代码的书写的。</p>
+<pre><code class="python"># ---------------------------
+__author__ = &#39;luyuonism&#39;
+__date__ = &#39;2018/6/5 09:11:43&#39;
+# ---------------------------
+
+from django.views import generic
+from django.shortcuts import get_object_or_404, get_list_or_404
+from .models import Article, BigCategory, Category, Tag
+
+# Create your views here.
+class IndexView(generic.ListView):
+    &quot;&quot;&quot;
+        首页视图,继承自ListVIew，用于展示从数据库中获取的文章列表
+    &quot;&quot;&quot;
+    # 获取数据库中的文章列表
+    model = Article
+    # template_name属性用于指定使用哪个模板进行渲染
+    template_name = &#39;index.html&#39;
+    # context_object_name属性用于给上下文变量取名（在模板中使用该名字）
+    context_object_name = &#39;articles&#39;</code></pre>
+<h4 id="配置首页路由"><a href="#配置首页路由" class="headerlink" title="配置首页路由"></a>配置首页路由</h4><p>通过 url 将视图函数与模板关联起来</p>
+<p>现在我们有了 index.html 页面，也有了视图函数 IndexView，但是怎么才能通过 127.0.0.1:8000 访问到这个页面呢？django中是通过 url 将这个页面与视图函数关联起来，也就是前后端的API接口。</p>
+<p>添加 urls.py 文件   blog -&gt; luyu</p>
+<p>配置页面路由   blog -&gt; luyu -&gt; urls.py</p>
+<pre><code class="python">from django.conf.urls import url
+from .views import IndexView
+
+urlpatterns = [
+    url(r&#39;^$&#39;, IndexView.as_view(template_name=&#39;index.html&#39;), name=&#39;index&#39;)
+]</code></pre>
+<p><strong>template_name 是指定使用的模板文件，传递给视图，进行数据渲染，后边详讲路由配置博客应用路由</strong></p>
+<p>blog -&gt; blog -&gt; urls.py</p>
+<pre><code class="python">from django.conf.urls import url, include
+from django.contrib import admin
+
+urlpatterns = [
+    # 后台管理应用，django自带
+    url(r&#39;^admin/&#39;, admin.site.urls),
+    # storm 应用
+    url(&#39;&#39;, include(&#39;storm.urls&#39;, namespace=&#39;blog&#39;)),  
+]</code></pre>
+<p>此时的项目结构：</p>
+<pre><code>.
+|-- blog
+|   |-- luyu                # 博客应用
+|   |   |-- migrations      # 数据库映射文件
+|   |   |-- __init__.py     # 声明模块，内容默认为空
+|   |   |-- admin.py        # 该应用的后台管理系统
+|   |   |-- apps.py         # 应用配置，Django-1.9以后自动生成
+|   |   |-- models.py       # 数据模块，使用ORM框架
+|   |   |-- tests.py        # 自动化测试的模块    
+|   |   |-- urls.py         # 应用路由    
+|   |   |-- views.py        # 执行响应的代码所在模块，是代码逻辑处理的主要地点，项目中大部分代码在这里编写    
+|   |-- blog                # 项目的容器
+|   |   |-- __init__.py     # 声明模块，内容默认为空
+|   |   |-- settings.py     # 该 Django 项目的设置/配置。
+|   |   |-- urls.py         # 该 Django 项目的 URL 声明; 一份由 Django 驱动的网站&quot;目录&quot;。
+|   `-- wsgi.py             # 一个 WSGI 兼容的 Web 服务器的入口，以便运行你的项目
+|   |-- static              # 静态文件
+|   |   |-- css
+|   |   |-- fonts
+|   |   |-- images
+|   |   |-- js
+|   |-- templates           # 模板文件
+|   |   |-- about.html
+|   |   |-- donate.html
+|   |   |-- exchange.html
+|   |   |-- index.html
+|   |   |-- message.html
+|   |   |-- project.html
+|   |   |-- question.html
+|   |   |-- resources.html
+|   |   |-- technique.html
+|   |   |-- wp-login.html
+`-- manage.py
+</code></pre><h4 id="修改静态文件路径"><a href="#修改静态文件路径" class="headerlink" title="修改静态文件路径"></a>修改静态文件路径</h4><p>访问 127.0.0.1:8000 这个页面时，Django 会通过正则表达式解析这个 url，从而判断出该 url 连接到哪个视图函数，我们这里对应的就是 IndexView。然后在 IndexView 中， 将 index.html 传递给前端，并通过浏览器展示给用户，这样我们便配置好了首页。<br><strong>首页样式的加载</strong></p>
+<p>但是在刷新首页时，我们发现并没有样式，样式文件我们放在 static 文件夹中了，而index.html并没有定位到该目录</p>
 
   </article>
   
@@ -401,7 +872,7 @@ K： 网站页面Keywords，也即网站涵盖的主题</code></pre><p>则需要
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573129450416"></script>
+<script src="/js/app.js?v=1573380570249"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

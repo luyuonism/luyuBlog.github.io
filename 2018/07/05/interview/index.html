@@ -24,7 +24,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;gCmXtq2okPy1McI.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;RICP3bFkplZvUnV.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;JHT9bL6o8f4YryM.png">
-<meta property="og:updated_time" content="2019-11-07T12:22:16.369Z">
+<meta property="og:updated_time" content="2019-11-10T10:07:56.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -34,7 +34,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573129450398">
+  <link rel="stylesheet" href="/css/style.css?v=1573380570215">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -187,8 +187,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>1,955 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 8 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>2,595 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 11 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/interview/" rel="tag">interview</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -374,7 +374,70 @@ KeyError: &#39;four&#39;</code></pre>
 <li>del(dict[‘key’])  删除的是键值对，是整个元素</li>
 </ul>
 <h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>[起始位置:结束位置:步长]<br>步长到达位置的元素被取出，如果超出结束位置的话，结束，不报错，超出的部分取不到元素</p>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="args-和-kwargs"><a href="#args-和-kwargs" class="headerlink" title="args 和 kwargs"></a>args 和 kwargs</h3><h3 id="局部变量-全局变量-global"><a href="#局部变量-全局变量-global" class="headerlink" title="局部变量 全局变量 global"></a>局部变量 全局变量 global</h3><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><h3 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h3><h3 id="if-name-‘-main-‘"><a href="#if-name-‘-main-‘" class="headerlink" title="if __name__ = ‘__main__‘:"></a>if __name__ = ‘__main__‘:</h3><h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><h3 id="datetime…"><a href="#datetime…" class="headerlink" title="datetime…"></a>datetime…</h3><h2 id="多线程和多进程"><a href="#多线程和多进程" class="headerlink" title="多线程和多进程"></a>多线程和多进程</h2><h3 id="怎么实现多线程"><a href="#怎么实现多线程" class="headerlink" title="怎么实现多线程"></a>怎么实现多线程</h3><h3 id="线程和进程的关系"><a href="#线程和进程的关系" class="headerlink" title="线程和进程的关系"></a>线程和进程的关系</h3><h3 id="run-start"><a href="#run-start" class="headerlink" title="run()  start()"></a>run()  start()</h3><h3 id="GIL-全局解释锁"><a href="#GIL-全局解释锁" class="headerlink" title="GIL 全局解释锁"></a>GIL 全局解释锁</h3><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="init-…"><a href="#init-…" class="headerlink" title="__init__ …"></a>__init__ …</h3><h3 id="类-对象"><a href="#类-对象" class="headerlink" title="类 对象"></a>类 对象</h3><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>try…except…else…finally</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="args-和-kwargs"><a href="#args-和-kwargs" class="headerlink" title="**args 和 **kwargs"></a>**args 和 **kwargs</h3><h3 id="局部变量-全局变量-global"><a href="#局部变量-全局变量-global" class="headerlink" title="局部变量 全局变量 global"></a>局部变量 全局变量 global</h3><pre><code class="python">def main():
+    print(a)
+a = 1
+main()</code></pre>
+<p>运行结果：</p>
+<pre><code class="python">1</code></pre>
+<p>函数只能使用在它调用之前定义过的变量：</p>
+<pre><code class="python">def main():
+    print(a)
+main()
+a = 1</code></pre>
+<p>运行报错</p>
+<pre><code class="python">def main():
+    a = 2
+    print(&#39;函数体内部a=&#39; + a)
+a = 1
+main()
+print(&#39;函数体外部a=&#39; + a)</code></pre>
+<p>函数内的变量a是局部变量不会对全局变量造成影响，运行结果：</p>
+<pre><code>函数体内部a=2
+函数体外部a=1</code></pre><pre><code class="python">def main():
+    global a
+    a = 2
+    print(&#39;函数体内部a=&#39; + a)
+a = 1
+main()
+print(&#39;函数体外部a=&#39; + a)</code></pre>
+<p>运行结果：</p>
+<pre><code>函数体内部a=2
+函数体外部a=2</code></pre><pre><code class="python">def fun1():
+    a1 = 1
+    def fun2():
+        a1 = a1 * 2
+        print(a1)
+    return fun2()
+fun1()</code></pre>
+<p>运行报错，a1也不是全局变量不能用global,</p>
+<pre><code class="python">def fun1():
+    a1 = 1
+    def fun2():
+        nonlocal a1
+        a1 = a1 * 2
+        print(a1)
+    return fun2()
+fun1()</code></pre>
+<p>运行结果</p>
+<pre><code>2</code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><pre><code class="python">def out(a):  # 定义一个函数out(),形参为a
+    def In():  # 在函数内部在定义一个函数In()
+        print(a)  # 在In()函数内打印变量a
+    return In  # 在out()函数内返回In的指针
+out(1)  # 调用函数out,实参为1,此时将返回函数In的指针
+# out函数在运行结束后，变量a也将释放，那么理论上，函数In是访问不到a变量的
+# 因此如果调用这个In函数的话，应该会报错
+out(1)()  # 运行结果为1
+# 说明内层函数In依旧可以访问变量a
+# 这是因为当 内层函数 调用了 外层函数 作用域中的“变量”时，外层函数运行调用结束后，将会把内层函数涉及到的变量“送”给内层函数以保证其正常运行，这就是所谓的闭包
+#  闭包 = 函数块 + 创建它时的环境</code></pre>
+<h3 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h3><p>使用dir或help函数确定一个对象有哪些属性可供使用。<br>使用type函数确定这些对象都是什么类型，例如是函数还是变量。<br>使用help函数或对象的<strong>doc</strong>属性查看对象的的说明文档。</p>
+<h3 id="if-name-‘-main-‘"><a href="#if-name-‘-main-‘" class="headerlink" title="if __name__ == ‘__main__‘:"></a>if __name__ == ‘__main__‘:</h3><p>if __name__ == ‘__main__‘ 可以保证脚本在以模块导入的时候不会自动执行最外层–函数定义以外的代码</p>
+<h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>read()会一次性读取文件的全部内容<br>read(size)每次最多读取size个字节的内容<br>readline()可以每次读取一行内容<br>readlines()一次读取所有内容并按行返回list</p>
+<p>seek函数可以实现文件里的定位读写</p>
+<pre><code class="python">seek(offset, from_what)</code></pre>
+<p>offset参数：偏移量。<br>from_what：偏移量的起始位置。0：文件开头；1：当前位置；2：文件结尾。默认为0</p>
+<h3 id="datetime…"><a href="#datetime…" class="headerlink" title="datetime…"></a>datetime…</h3><h2 id="多线程和多进程"><a href="#多线程和多进程" class="headerlink" title="多线程和多进程"></a>多线程和多进程</h2><h3 id="怎么实现多线程"><a href="#怎么实现多线程" class="headerlink" title="怎么实现多线程"></a>怎么实现多线程</h3><h3 id="线程和进程的关系"><a href="#线程和进程的关系" class="headerlink" title="线程和进程的关系"></a>线程和进程的关系</h3><h3 id="run-start"><a href="#run-start" class="headerlink" title="run()  start()"></a>run()  start()</h3><h3 id="GIL-全局解释锁"><a href="#GIL-全局解释锁" class="headerlink" title="GIL 全局解释锁"></a>GIL 全局解释锁</h3><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="init-…"><a href="#init-…" class="headerlink" title="__init__ …"></a>__init__ …</h3><h3 id="类-对象"><a href="#类-对象" class="headerlink" title="类 对象"></a>类 对象</h3><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>try…except…else…finally</p>
 <h2 id="列表推倒式-迭代器-生成器"><a href="#列表推倒式-迭代器-生成器" class="headerlink" title="列表推倒式 迭代器  生成器"></a>列表推倒式 迭代器  生成器</h2><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器的详细部分，<a href="https://luyuonism.github.io/2018/06/05/decorator/">点击这里</a></p>
 <h2 id="lamba-map-reduce-filter"><a href="#lamba-map-reduce-filter" class="headerlink" title="lamba  map()  reduce()  filter()"></a>lamba  map()  reduce()  filter()</h2>
   </article>
@@ -423,7 +486,7 @@ KeyError: &#39;four&#39;</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573129450402"></script>
+<script src="/js/app.js?v=1573380570220"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
