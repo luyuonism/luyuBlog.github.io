@@ -27,7 +27,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;09&#x2F;wtbLJoiRTNW8Fau.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;09&#x2F;8UgS7sJWwDftc1r.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;09&#x2F;XRjFVdeGoNfpbW4.png">
-<meta property="og:updated_time" content="2019-11-10T09:13:06.056Z">
+<meta property="og:updated_time" content="2019-11-11T09:00:11.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;07&#x2F;1cIVjQgrBLUwTE8.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -37,7 +37,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573383104611">
+  <link rel="stylesheet" href="/css/style.css?v=1573462954063">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -61,7 +61,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>7</div>
+        <div><span>文章</span>8</div>
         <div><span>标签</span>3</div>
         <div><span>分类</span>0</div>
     </div>
@@ -134,7 +134,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li></ul>
     </div>
   </div>
 
@@ -155,7 +155,7 @@
           </li>
         
           <li>
-            <a href="/2018/07/05/interview/">interview</a>
+            <a href="/2018/07/05/python-basis/">python基础</a>
           </li>
         
           <li>
@@ -190,8 +190,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年06月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>6,402 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 26 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>10,351 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 43 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/django/" rel="tag">django</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -825,6 +825,329 @@ urlpatterns = [
 `-- manage.py
 </code></pre><h4 id="修改静态文件路径"><a href="#修改静态文件路径" class="headerlink" title="修改静态文件路径"></a>修改静态文件路径</h4><p>访问 127.0.0.1:8000 这个页面时，Django 会通过正则表达式解析这个 url，从而判断出该 url 连接到哪个视图函数，我们这里对应的就是 IndexView。然后在 IndexView 中， 将 index.html 传递给前端，并通过浏览器展示给用户，这样我们便配置好了首页。<br><strong>首页样式的加载</strong></p>
 <p>但是在刷新首页时，我们发现并没有样式，样式文件我们放在 static 文件夹中了，而index.html并没有定位到该目录</p>
+<p>配置静态路径<br>blog -&gt; blog -&gt; settings.py</p>
+<pre><code class="python">STATIC_URL = &#39;/static/&#39;
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, &#39;static&#39;)
+]</code></pre>
+<p>index.html 中，在第一行添加：</p>
+<pre><code class="python">{% load staticfiles %}</code></pre>
+<p>修改静态文件路径</p>
+<pre><code class="python">&lt;link rel=&#39;stylesheet&#39; id=&#39;l2h_print_style-css&#39;  href=&#39;../static/css/print.min.css&#39; type=&#39;text/css&#39; media=&#39;print&#39; /&gt;
+&lt;link rel=&#39;stylesheet&#39; id=&#39;style-css&#39;  href=&#39;../static/css/style.css&#39; type=&#39;text/css&#39; media=&#39;all&#39; /&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;../static/js/jquery.min.js&#39;&gt;&lt;/script&gt;</code></pre>
+<p>修改静态文件路径为绝对路径</p>
+<pre><code class="python">&lt;link rel=&#39;stylesheet&#39; id=&#39;l2h_print_style-css&#39;  href=&#39;/static/css/print.min.css&#39; type=&#39;text/css&#39; media=&#39;print&#39; /&gt;
+&lt;link rel=&#39;stylesheet&#39; id=&#39;style-css&#39;  href=&#39;/static/css/style.css&#39; type=&#39;text/css&#39; media=&#39;all&#39; /&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;/static/js/jquery.min.js&#39;&gt;&lt;/script&gt;</code></pre>
+<p>把静态路径修改为动态路径</p>
+<pre><code class="python">&lt;link rel=&#39;stylesheet&#39; id=&#39;l2h_print_style-css&#39;  href=&#39;{% static 'css/print.min.css' %}&#39; type=&#39;text/css&#39; media=&#39;print&#39; /&gt;
+&lt;link rel=&#39;stylesheet&#39; id=&#39;style-css&#39;  href=&#39;{% static 'css/style.css' %}&#39; type=&#39;text/css&#39; media=&#39;all&#39; /&gt;
+&lt;script type=&#39;text/javascript&#39; src=&#39;{% static 'js/jquery.min.js' %}&#39;&gt;&lt;/script&gt;</code></pre>
+<p>以上只是部分示列，要把 index.html文件中的 ../ 按上边的方式全改掉</p>
+<p>绝对路径也可以加载静态文件，为什么要配置动态路径，</p>
+<p>settings.py 中设置的静态路径，/static/ 这里对应前端模板的 /static/, 如果后台 static 文件夹名称修改了，前端那么多 /static/ 都要修改那不得累死，所以这里给 把静态文件路由固定为 /static/.</p>
+<pre><code class="python">STATIC_URL = &#39;/static/&#39;
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, &#39;static&#39;)
+]</code></pre>
+<p>这样如果修改了 static 静态文件夹的名称，只需要修改一下 os.path.join(BASE_DIR, ‘static’) 名字即可</p>
+<p>(BASE_DIR, ‘static’) 中的 ‘static’ 名字随便修改<br>配置好静态路径后，重启项目，查看运行效果<br>目前展示的还只是静态页面，首页中博客的内容仍然是<a href="https://cuiqingcai.com/" target="_blank" rel="noopener">模板</a>的内容</p>
+<p>过程中可能遇到</p>
+<pre><code class="python">&#39;Specifying a namespace in include() without providing an app_name &#39;
+django.core.exceptions.ImproperlyConfigured: Specifying a namespace in include() without providing an app_name is not supported. Set the app_name attribute in the included module, or pass a 2-tuple containing the list of patterns and app_name instead.</code></pre>
+<p>的报错，python3 Django 环境下，如果遇到在根目录下urls.py中的include方法的第二个参数namespace添加之后就出错的问题。可以 luyu 目录下的urls.py中的urlpatterns前面加上app_name=’luyu’.</p>
+<h4 id="整理项目结构"><a href="#整理项目结构" class="headerlink" title="整理项目结构"></a>整理项目结构</h4><h5 id="集中管理应用"><a href="#集中管理应用" class="headerlink" title="集中管理应用"></a>集中管理应用</h5><p>在项目根目录下新建 apps 文件，让项目变得更精致，把 luyu 和 user 拷贝到内 apps 文件内<br>现在项目结构</p>
+<pre><code>.
+|-- blog
+|   |-- apps
+|   |   |-- luyu                # 博客应用
+|   |   |   |-- migrations      # 数据库映射文件
+|   |   |   |-- __init__.py     # 声明模块，内容默认为空
+|   |   |   |-- admin.py        # 该应用的后台管理系统
+|   |   |   |-- apps.py         # 应用配置，Django-1.9以后自动生成
+|   |   |   |-- models.py       # 数据模块，使用ORM框架
+|   |   |   |-- tests.py        # 自动化测试的模块        
+|   |   |   |-- views.py        # 项目业务逻辑主要在这里编写 
+|   |   |-- user                # 用户应用
+|   |   |   |-- migrations      
+|   |   |   |-- __init__.py     
+|   |   |   |-- admin.py        
+|   |   |   |-- apps.py     
+|   |   |   |-- models.py       
+|   |   |   |-- tests.py          
+|   |   |   |-- views.py        
+|   |-- blog                # 项目的容器
+|   |   |-- __init__.py     # 声明模块，内容默认为空
+|   |   |-- settings.py     # 该 Django 项目的设置/配置。
+|   |   |-- urls.py         # 该 Django 项目的 URL 声明; 一份由 Django 驱动的网站&quot;目录&quot;。
+|   `-- wsgi.py             # 一个 WSGI 兼容的 Web 服务器的入口，以便运行你的项目
+|   |-- static              # 静态文件
+|   |   |-- css
+|   |   |-- fonts
+|   |   |-- images
+|   |   |-- js
+|   |-- templates           # 模板文件
+|   |   |-- about.html
+|   |   |-- donate.html
+|   |   |-- exchange.html
+|   |   |-- index.html
+|   |   |-- message.html
+|   |   |-- project.html
+|   |   |-- question.html
+|   |   |-- resources.html
+|   |   |-- technique.html
+|   |   |-- wp-login.html
+`-- manage.py</code></pre><p>把鼠标放在apps上右击鼠标，选择 Mark Directory as -&gt; Sources Root 点击</p>
+<p>在配置文件中配置应用文件路径</p>
+<p>blog -&gt; blog -&gt; settings.py</p>
+<pre><code class="python"># 添加 apps 目录
+sys.path.insert(0, os.path.join(BASE_DIR, &#39;apps&#39;))</code></pre>
+<h5 id="制作基础模板"><a href="#制作基础模板" class="headerlink" title="制作基础模板"></a>制作基础模板</h5><p>分析一下模板博客页面<br>生活笔记、技术杂谈、福利专区、文章归档、标签、生活笔记下拉菜单、技术杂谈下拉菜单</p>
+<p>这些页面属于同一个页面，只是不同类别展示的文章不同而已</p>
+<p>首页和上边的区别就是多了一个轮播图</p>
+<p>关于自己、给我留言、赞助作者、属于单个静态页面加上一个评论区</p>
+<p>技术交流、提问交流、项目合作、属于单个静态页面</p>
+<p>那么初步分析，可以有两个模板</p>
+<p>一区为顶部基础模板，几乎网站的每个页面都要用到</p>
+<p>二区 为幻灯片，热门推荐，只有首页有</p>
+<p>三区为侧边栏，分类页、标签页、归档页也都有用到</p>
+<p>四区就是内容展示区了，分类页、标签页、详情页都有用到</p>
+<p>综上，用到的地方多的是 一区、三区、四区</p>
+<p>四区基本都是伴随一区、三区出现的，也即四区继承一区或者三区</p>
+<p>所以，需要两个基础模板，就是 一个是一区，一个是一区结合三区</p>
+<p>头部一区称作 base.html、一区加侧边栏三区称作 base_right.html</p>
+<p>base_right.html 继承 base.html</p>
+<p><a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/base.html" target="_blank" rel="noopener">base.html</a></p>
+<p><a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/base_right.html" target="_blank" rel="noopener">base_right.html</a></p>
+<p>index.html 改写一下，<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/index.html" target="_blank" rel="noopener">index.html</a></p>
+<h4 id="Django-工作原理"><a href="#Django-工作原理" class="headerlink" title="Django 工作原理"></a>Django 工作原理</h4><p>视图函数（类），简称视图，是一个简单的 Python 函数（类），它接收 Web 请求并且返回 Web 响应。响应可以是一个网页的 HTML 内容，一个重定向，一个404错误，一个 XML 文档，或者一张图片，甚至一个文件。无论视图本身包含什么逻辑，都要返回响应。代码书写位置无要求，只要它在你当前项目目录下面。除此之外没有更多的要求——可以说 “没有什么神奇的地方”。为了将代码放在某处，大家约定成俗将视图放置在项目（project）或应用程序（app）目录中的名为views.py的文件中</p>
+<p>正确的流程，应该是，先分析前端代码，来配置路由，然后书写视图逻辑</p>
+<p>Django 工作原理：<br>用户发出 http 请求 -&gt; 匹配路由 -&gt; 进入视图 -&gt; 根据用户请求在视图内编写逻辑 -&gt; 把渲染后的 html 代码返给浏览器 -&gt; 浏览器解析后呈现给用户</p>
+<p>用户请求：就是 url(网址)</p>
+<p>路由：Django 根据 用户请求的地址，来判断用户是干啥的，把任务交给指定的视图函数去干活</p>
+<p>视图：接收到路由委派的任务后，开始操作数据库，增、删、查，基本就这些个活，干好后，把渲染后的thml交给浏览器，浏览器解析后展示给用户要看的东西</p>
+<h4 id="导航栏"><a href="#导航栏" class="headerlink" title="导航栏"></a>导航栏</h4><p>blog -&gt;templates -&gt; base.html</p>
+<p>头部引入文件，staticfiles静态文件、blog_tags 自定义模板标签，记得无论那个页面只要用到里边的函数都要在头部引入</p>
+<pre><code class="python">{% load staticfiles %}
+{% load blog_tags %}
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;</code></pre>
+<p><a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B8%B2%E6%9F%93%E6%95%B0%E6%8D%AE.html" target="_blank" rel="noopener">导航栏渲染数据</a></p>
+<p>blog -&gt; luyu -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py"># 创建了新的tags标签文件后必须重启服务器
+
+from django import template
+from ..models import Article, Category, Tag, Carousel, FriendLink, BigCategory, Activate, Keyword
+from django.db.models.aggregates import Count
+from django.utils.html import mark_safe
+import re
+
+# 注册自定义标签函数
+register = template.Library()
+
+
+# 获取导航条大分类查询集
+@register.simple_tag
+def get_bigcategory_list():
+    &quot;&quot;&quot;返回大分类列表&quot;&quot;&quot;
+    return BigCategory.objects.all()
+
+
+# 返回文章分类查询集
+@register.simple_tag
+def get_category_list(id):
+    &quot;&quot;&quot;返回小分类列表&quot;&quot;&quot;
+    return Category.objects.filter(bigcategory_id=id)</code></pre>
+<p>Templatetags:</p>
+<p>必须写的头部</p>
+<pre><code class="py">from django import template
+# 注册自定义标签函数
+register = template.Library()</code></pre>
+<p>自定义模版标签，和(view)视图的区别就是不需要接收 request 请求，只需要在模板也即前端页面接收参数，返回需要的数据进行展示即可。也就意味着，除了需要和用户交互的内容，比如用户给某篇章点赞，需要使用 Jquery + ajax 实现无刷新给页面喜欢数量加一，这个就需要 Jquery 接收到用户点击行为后，AJAX 携带信息给指定路由发出请求，视图接收到请求，把处理结果返给 AJAX 实现无数刷新地更新喜欢量。只要不涉及交互，的数据请求都可以放在 Templatetags 处理前端需要展示的数据</p>
+<h4 id="幻灯片"><a href="#幻灯片" class="headerlink" title="幻灯片"></a>幻灯片</h4><p>blog -&gt;templates -&gt; index.html<br>幻灯片部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/indexcarousel.html" target="_blank" rel="noopener">index.html</a>的修改<br>blog -&gt; luyu -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py"># 获取滚动的大幻灯片查询集、获取左侧的幻灯片查询集，这两个部分用的图片是一样的
+@register.simple_tag
+def get_carousel_index():
+    return Carousel.objects.filter(number__lte=5)</code></pre>
+<p>在数据库内给幻灯片添加一些图片</p>
+<p>不要忘了在index.html中加载blog_tags</p>
+<pre><code>{% load blog_tags %}</code></pre><h4 id="热门文章"><a href="#热门文章" class="headerlink" title="热门文章"></a>热门文章</h4><p>blog -&gt;templates -&gt; index.html<br>热门文章部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/indexhotposts.html" target="_blank" rel="noopener">index.html</a>的修改<br>blog -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py"># 获取热门排行数据查询集，参数：sort 文章类型， num 数量
+@register.simple_tag
+def get_article_list(sort=None, num=None):
+    &quot;&quot;&quot;获取指定排序方式和指定数量的文章&quot;&quot;&quot;
+    if sort:
+        if num:
+            return Article.objects.order_by(sort)[:num]
+        return Article.objects.order_by(sort)
+    if num:
+        return Article.objects.all()[:num]
+    return Article.objects.all()</code></pre>
+<h4 id="文章列表"><a href="#文章列表" class="headerlink" title="文章列表"></a>文章列表</h4><p>blog -&gt;templates -&gt; index.html<br>文章列表部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/indexarticle.html" target="_blank" rel="noopener">index.html</a>的修改<br>这里没用到自定义模板标签</p>
+<h4 id="侧边栏"><a href="#侧边栏" class="headerlink" title="侧边栏"></a>侧边栏</h4><p>blog -&gt;templates -&gt; base_right.html<br>首先个人联系方式的矢量图没显示出来，需要引入一下矢量图文件<br>首先去awesome官网下载 font-awesome-4.7.0或者拷贝Github项目中的矢量文件，然后把文件放入 static 静态文件中，然后在<br>blog -&gt;templates -&gt; base.html中的head标签引入头部文件的地方导入路径</p>
+<pre><code>&lt;link rel=&#39;stylesheet&#39; id=&#39;page-list-style-css&#39;  href=&#39;/static/font-awesome-4.7.0/css/font-awesome.min.css&#39; type=&#39;text/css&#39; media=&#39;all&#39; /&gt;</code></pre><p>侧边栏热门专题轮播图</p>
+<p>blog -&gt;templates -&gt; base_right.html</p>
+<p>不要忘记在头部引入自定义模板标签 </p>
+<pre><code>{% load blog_tags %}</code></pre><p>热门专题轮播图部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/base_righthot.html" target="_blank" rel="noopener">index.html</a>的修改<br>blog -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py"># 获取右侧栏热门专题幻灯片查询集
+@register.simple_tag
+def get_carousel_right():
+    return Carousel.objects.filter(number__gt=5, number__lte=10)</code></pre>
+<p>Carousel表前五个是首页大轮播图、后五个是热门专题轮播图</p>
+<h4 id="文章归档"><a href="#文章归档" class="headerlink" title="文章归档"></a>文章归档</h4><p>blog -&gt;templates -&gt; base_right.html<br>文章归档部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/base_righarchive.html" target="_blank" rel="noopener">index.html</a>的修改<br>blog -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py">blog -&gt; templatetags -&gt; blog_tags.py
+
+# 获取归档文章查询集
+@register.simple_tag
+def get_data_date():
+    &quot;&quot;&quot;获取文章发表的不同月份&quot;&quot;&quot;
+    article_dates = Article.objects.datetimes(&#39;create_date&#39;, &#39;month&#39;, order=&#39;DESC&#39;)
+    return article_dates</code></pre>
+<h4 id="猜你喜欢"><a href="#猜你喜欢" class="headerlink" title="猜你喜欢"></a>猜你喜欢</h4><p>blog -&gt;templates -&gt; base_right.html<br>猜你喜欢部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/base_righlove.html" target="_blank" rel="noopener">index.html</a>的修改<br>blog -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py"># 文章相关标签函数，和热门文章使用同一个函数
+@register.simple_tag
+def get_article_list(sort=None, num=None):
+    &#39;&#39;&#39;获取指定排序方式和指定数量的文章&#39;&#39;&#39;
+    if sort:
+        if num:
+            return Article.objects.order_by(sort)[:num]
+        return Article.objects.order_by(sort)
+    if num:
+        return Article.objects.all()[:num]
+    return Article.objects.all()</code></pre>
+<p>和热门文章使用同一个函数</p>
+<h4 id="标签云和友情链接"><a href="#标签云和友情链接" class="headerlink" title="标签云和友情链接"></a>标签云和友情链接</h4><p>blog -&gt;templates -&gt; base_right.html<br>标签云和友情链接部分<a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/base_rightaf.html" target="_blank" rel="noopener">index.html</a>的修改<br>storm -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py"># 获取文章标签信息，参数文章ID
+@register.simple_tag
+def get_article_tag(article_id):
+    return Tag.objects.filter(article=article_id)</code></pre>
+<p>有点乱，<a href="https://github.com/luyuonism/blog" target="_blank" rel="noopener">完整代码</a></p>
+<h4 id="渲染分类页面数据"><a href="#渲染分类页面数据" class="headerlink" title="渲染分类页面数据"></a>渲染分类页面数据</h4><p>在 blog -&gt; templates 中新建文件 content.html</p>
+<p>生活笔记分类</p>
+<p>blog -&gt; templates -&gt; <a href="https://github.com/luyuonism/blog/blob/master/%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6/content.html" target="_blank" rel="noopener">content.html</a></p>
+<p>自定义模板标签</p>
+<p>blog -&gt; templatetags -&gt; blog_tags.py</p>
+<pre><code class="py">@register.simple_tag
+def get_title(category):
+    a = BigCategory.objects.filter(slug=category)
+    if a:
+        return a[0]</code></pre>
+<p>头部引入</p>
+<pre><code>{% load blog_tags %}</code></pre><p>首页 大分类跳转地址</p>
+<pre><code>&lt;a href=&quot;{% url 'blog:category' big.slug '' %}&quot;&gt;{{ big.name }}&lt;/a&gt;</code></pre><p>首页大分类下拉菜单小分类地址</p>
+<pre><code>&lt;a href=&quot;{% url 'blog:category'  big.slug   c.slug  %}&quot;&gt;{{ c.name }}&lt;/a&gt;</code></pre><p>配置路由</p>
+<pre><code class="py"># 分类页面
+url(r&#39;^category/(?P&lt;bigslug&gt;.*?)/(?P&lt;slug&gt;.*?)&#39;, IndexView.as_view(template_name=&#39;content.html&#39;), name=&#39;category&#39;),</code></pre>
+<p>简单理解路由，这里都是我的个人理解可能不会有官方文档解释的科学，如果读完还有疑惑不要纠结，问题不大，刚开始接触不需要理解的太深入。</p>
+<pre><code class="py">{% url 'blog:category' big.slug '' %}</code></pre>
+<p>big.slug：是从 bigcategory 表取出的数据，是导航菜单，大分类字段</p>
+<p>Django 的路由其实就是使用正则表达式匹配前端 http 请求的路径</p>
+<p>http 请求可以理解为，前台的点击事件，比如用户点击 生活笔记 或者 个人随笔</p>
+<p>就是告诉服务器我想看这些内容，那么怎么告诉，就是发送 http 请求，这里 {% url 'blog:category' big.slug '' %} 就是 Django 模板定义请求路径的方式</p>
+<p>blog：主路由 url(‘’, include(‘storm.urls’, namespace=’blog’))， 定义应用空间名 namespace 为 blog，这样后台修改应用 storm 名不会影响前台渲染数据，和配置静态路径一样的道理</p>
+<p>category：是storm应用路由 url(r’^category/(?P.?)/(?P.?)’, IndexView.as_view(template_name=’content.html’), name=’category’) 中的开始匹配位置</p>
+<p>比如 这里用户点击生活笔记，那么他的请求路经是</p>
+<p>浏览器解析</p>
+<pre><code class="py">{% url 'blog:category' big.slug '' %}</code></pre>
+<p>后路径即为<br>http://域名.com/category/diary</p>
+<p>则 Django 首先去 项目容器 blog -&gt; blog -&gt; urls.py 中匹配这个路径，匹配的规则是首先精准匹配这个路径，就是拿 category 去对比 路由的第一个参数</p>
+<p>发现没有 category，如果未匹配到，则进行模糊匹配，就是直接走路由第一个参数为空的路由，那么就进到了</p>
+<p>url(‘’, include(‘storm.urls’, namespace=’blog’)) 这里，include 的第一个参数指向的是子路由位置，</p>
+<p>通过这里进入 blog -&gt; storm -&gt; urls.py 继续拿 category 匹配路径，在这里匹配到了</p>
+<pre><code class="py">url(r&#39;^category/(?P&lt;bigslug&gt;.*?)/(?P&lt;slug&gt;.*?)&#39;, IndexView.as_view(template_name=&#39;content.html&#39;), name=&#39;category&#39;)</code></pre>
+<p>好了第一个http请求已经找到归宿</p>
+<pre><code class="py">{% url 'blog:category' big.slug '' %}</code></pre>
+<p>big.slug：第一个参数 就是 diary，通过 正则匹配到 diary</p>
+<p>‘’：第二个参数为空，因为这里请求的是大分类，但是大分类和小分类这里使用的是同一个路由，所以要置空</p>
+<p>如果 用户点击个人随笔，那么请求的路经是 http://域名.com/category/diary/life</p>
+<pre><code class="py">{% url 'blog:category'  big.slug   c.slug  %}</code></pre>
+<p>big.slug：第一个参数，是从数据库中取出的大分类，即为 diary</p>
+<p>c.slug：第二个参数是从 category表取出的文章分类字段，即为 life</p>
+<h4 id="关于自己"><a href="#关于自己" class="headerlink" title="关于自己"></a>关于自己</h4><p>关于自己(about)、给我留言((message)、赞助作者(donate)、技术交流(exchange)、提问交流(question)、项目合作(project)、属于同一类页面，都是静态展示页面 所以要单独创建页面</p>
+<p>blog -&gt; templates -&gt; about.html<br>配置路由</p>
+<pre><code class="py">url(r&#39;^category/about/$&#39;, AboutView, name=&#39;about&#39;),</code></pre>
+<p>创建视图</p>
+<pre><code class="py">def AboutView(request):
+    return render(request, &#39;about.html&#39;, {&#39;category&#39;: &#39;about&#39;})</code></pre>
+<p>生活笔记、技术杂谈、福利专区、生活笔记下拉菜单、技术杂谈下拉菜单、标签云、归档、都属于同一类，模仿实现即可</p>
+<h3 id="博客详情页面"><a href="#博客详情页面" class="headerlink" title="博客详情页面"></a>博客详情页面</h3><p>博客的详情页同样继承自 base.html 模板，侧边栏就不需要了</p>
+<p>blog -&gt; luyu -&gt; view.py</p>
+<pre><code class="py">class DetailView(generic.DetailView):
+    &quot;&quot;&quot;
+        Django有基于类的视图DetailView,用于显示一个对象的详情页，我们继承它
+    &quot;&quot;&quot;
+    # 获取数据库中的文章列表
+    model = Article
+
+    # template_name属性用于指定使用哪个模板进行渲染
+    template_name = &#39;article.html&#39;
+
+    # context_object_name属性用于给上下文变量取名（在模板中使用该名字）
+    context_object_name = &#39;article&#39;
+
+    def get_object(self):
+        obj = super(DetailView, self).get_object()
+        # 设置浏览量增加时间判断,同一篇文章两次浏览超过半小时才重新统计阅览量,作者浏览忽略
+        u = self.request.user
+        ses = self.request.session
+        the_key = &#39;is_read_{}&#39;.format(obj.id)
+        is_read_time = ses.get(the_key)
+        if u != obj.author:
+            if not is_read_time:
+                obj.update_views()
+                ses[the_key] = time.time()
+            else:
+                now_time = time.time()
+                t = now_time - is_read_time
+                if t &gt; 60 * 30:
+                    obj.update_views()
+                    ses[the_key] = time.time()
+        # 文章可以使用markdown书写，带格式的文章，像csdn写markdown文章一样
+        md = markdown.Markdown(extensions=[
+            &#39;markdown.extensions.extra&#39;,
+            &#39;markdown.extensions.codehilite&#39;,
+            TocExtension(slugify=slugify),
+        ])
+        obj.body = md.convert(obj.body)
+        obj.toc = md.toc
+        return obj
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        context[&#39;category&#39;] = self.object.id
+        return context</code></pre>
+<p>blog -&gt; luyu -&gt; urls.py</p>
+<pre><code class="py">from django.conf.urls import url
+from .views import IndexView, DetailView
+
+urlpatterns = [
+    # 首页
+    url(r&#39;^$&#39;, IndexView.as_view(template_name=&#39;index.html&#39;), name=&#39;index&#39;),  # 主页，自然排序
+    # 给我留言
+    url(r&#39;^category/message/$&#39;, MessageView, name=&#39;message&#39;),
+    # 关于自己
+    url(r&#39;^category/about/$&#39;, AboutView, name=&#39;about&#39;),
+    # 赞助作者
+    url(r&#39;^category/donate/$&#39;, DonateView, name=&#39;donate&#39;),
+    # 技术交流
+    url(r&#39;^category/exchange/$&#39;, ExchangeView, name=&#39;exchange&#39;),
+    # 项目合作
+    url(r&#39;^category/project/$&#39;, ProjectView, name=&#39;project&#39;),
+    # 提问交流
+    url(r&#39;^category/question/$&#39;, QuestionView, name=&#39;question&#39;),
+    # 分类页面
+    url(r&#39;^category/(?P&lt;bigslug&gt;.*?)/(?P&lt;slug&gt;.*?)&#39;, IndexView.as_view(template_name=&#39;content.html&#39;), name=&#39;category&#39;),
+    # 归档页面
+    url(r&#39;^date/(?P&lt;year&gt;\d+)/(?P&lt;month&gt;\d+)/$&#39;, IndexView.as_view(template_name=&#39;archive.html&#39;), name=&#39;date&#39;),
+    # 标签页面
+    url(r&#39;^tag/(?P&lt;tag&gt;.*?)/$&#39;, IndexView.as_view(template_name=&#39;content.html&#39;), name=&#39;tag&#39;),
+    # 文章详情页面
+    url(r&#39;^article/(?P&lt;slug&gt;.*?)/$&#39;, DetailView.as_view(), name=&#39;article&#39;),
+]</code></pre>
+<p>新添加的路由</p>
+<pre><code class="py">url(r&#39;^article/(?P&lt;slug&gt;.*?)/$&#39;, DetailView.as_view(), name=&#39;article&#39;),</code></pre>
 
   </article>
   
@@ -872,7 +1195,7 @@ urlpatterns = [
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573383104621"></script>
+<script src="/js/app.js?v=1573462954068"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

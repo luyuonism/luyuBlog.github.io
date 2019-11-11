@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <title>python基础 - Lu Ruijie&#39;s Personal Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+
+  <link rel="shortcut icon" href="/timg.ico" type="image/png" />
+  <meta name="description" content="python 学习之路">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python基础">
+<meta property="og:url" content="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2018&#x2F;07&#x2F;05&#x2F;python-basis&#x2F;index.html">
+<meta property="og:site_name" content="Lu Ruijie&#39;s Personal Homepage">
+<meta property="og:description" content="python 学习之路">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;uDiWtI1LMxeofac.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;gCmXtq2okPy1McI.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;RICP3bFkplZvUnV.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;JHT9bL6o8f4YryM.png">
+<meta property="og:updated_time" content="2019-11-11T01:26:57.916Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
+  <link rel="stylesheet" href="/css/style.css?v=1573462954044">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://i.loli.net/2019/01/13/5c3aec85a4343.jpg)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">menu</i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <a href="javascript:;" target="_blank" rel="noopener" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>
+        <a href="/" title="ruijielu" class="mdui-btn mdui-btn-icon"><img src="/avatar.png"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title="ruijielu">
+            <img src="/avatar.png" alt="ruijielu">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>8</div>
+        <div><span>标签</span>3</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <ul class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about.html" title="关于主页">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于主页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY.html" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </ul>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">社交按钮</h3>
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://space.bilibili.com/8736309" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://github.com/luyuonism/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-github"></i>
+        </a><a class="mdui-ripple" href="/weixin.jpg" target="_blank" mdui-tooltip="{content: '微信 luyuonism'}" style="color: rgb(102, 255, 204);background-color: rgba(102, 255, 204, .15);">
+            <i class="nexmoefont icon-wechat-fill"></i>
+        </a><a class="mdui-ripple" href="/qq.jpg" target="_blank" mdui-tooltip="{content: 'QQ 1501405087'}" style="color: rgb(102, 204, 255);background-color: rgba(102, 204, 255, .15);">
+            <i class="nexmoefont icon-QQ"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/6416453194/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" mdui-tooltip="{content: '微博'}" style="color: rgb(255, 69, 24);background-color: rgba(255, 69, 24, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://www.zhihu.com/people/lu-yu-36-39-54/activities" target="_blank" mdui-tooltip="{content: '知乎'}" style="color: rgb(11, 141, 255);background-color: rgba(11, 141, 255, .15);">
+            <i class="nexmoefont icon-zhihu"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">标签云</h3>
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud">
+      <a href="/tags/django/" style="font-size: 15px;">django</a> <a href="/tags/interview/" style="font-size: 10px;">interview</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/11/05/django-STATIC_ROOT/">django配置  STATIC_ROOT</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/05/python-f-string/">python f-string式格式化</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/05/python-basis/">python基础</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/05/decorator/">decorator</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/05/django/">Django</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-copyright">
+        &copy; 2019 ruijielu
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com" target="_blank">Git</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+    <div class="nexmoe-post-cover"> 
+        
+        <img src="https://i.loli.net/2019/11/06/xjzsDoA6Ybn9eim.png">
+        
+        <h1>python基础</h1>
+    </div>
+  <div class="nexmoe-post-meta">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月05日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2,985 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 12 分钟</a>
+    
+    
+      <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
+    
+  </div>
+  <article>
+    <p>python 学习之路</p>
+<a id="more"></a>
+<h1 id="python基础"><a href="#python基础" class="headerlink" title="python基础"></a>python基础</h1><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><h3 id="with"><a href="#with" class="headerlink" title="with"></a>with</h3><p>with语句实质是上下文管理。</p>
+<ol>
+<li>上下文管理协议。包含方法__enter__()和__exit__(),支持该协议对象要实现这两个方法。</li>
+<li>上下文管理器，定义执行with语句时要建立的运行时上下文，负责执行with语句块上下文中的进入与退出操作。</li>
+<li>进入上下文的时候执行__enter__方法，如果设置as var语句，var变量接受__enter__方法返回值。</li>
+<li>如果运行时发生了异常，就退出上下文管理器。调用管理器__exit__方法。</li>
+</ol>
+<p>但是with本身并没有异常捕获的功能，同时如果发生了运行时异常，它照样可以关闭文件释放资源。</p>
+<p>应用场景: 1、文件操作。2、进程线程之间互斥对象。3、支持上下文其他对象</p>
+<h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><ul>
+<li>yield 是一个类似 return 的关键字，只是这个函数返回的是个生成器</li>
+<li>当你调用这个函数的时候，函数内部的代码并不立马执行 ，这个函数只是返回一个生成器对象</li>
+<li>当你使用for进行迭代的时候，函数中的代码才会执行</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img src="https://i.loli.net/2019/11/06/aGwNEdLhom9B4QM.png" alt="常用数据类型" title="常用数据类型"></p>
+<h3 id="type-和-instance"><a href="#type-和-instance" class="headerlink" title="type() 和 instance()"></a>type() 和 instance()</h3><ul>
+<li>type() 不会认为子类是一种父类类型，不考虑继承关系。</li>
+<li>isinstance() 会认为子类是一种父类类型，考虑继承关系。<br>如果要判断两个类型是否相同推荐使用 isinstance()。</li>
+</ul>
+<pre><code class="python">a = 2
+
+print(isinstance(a,int))   # True
+print(isinstance(a,str))   # False
+
+
+class A:
+    pass
+
+class B(A):
+    pass
+
+print(&quot;isinstance&quot;,isinstance(A(),A))   # isinstance True
+print(&quot;type&quot;,type(A())  == A)    # type True
+
+print(&#39;isinstance&#39;,isinstance(B(),A) )   # isinstance True
+print(&#39;type&#39;,type(B()) == A)     #  type False</code></pre>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="和"><a href="#和" class="headerlink" title="// 和 %"></a>// 和 %</h3><pre><code class="python">&gt;&gt;&gt; 13 // 3
+4
+&gt;&gt;&gt; -13 // 3
+-5
+&gt;&gt;&gt; 13 // -3
+-5
+&gt;&gt;&gt; -13 // -3
+4
+&gt;&gt;&gt; 13 % 3
+1
+&gt;&gt;&gt; -13 % 3
+2
+&gt;&gt;&gt; 13 % -3
+-2
+&gt;&gt;&gt; -13 % -3
+-1</code></pre>
+<p><strong>如果：x // y = a，x % y = b</strong><br><strong>那么：x = a * y + b</strong><br>13 // -3 = -5, 13 % -3 = -2<br>13 = (-5) * (-3) + (-2)</p>
+<h3 id="gt-gt-和-lt-lt"><a href="#gt-gt-和-lt-lt" class="headerlink" title="&gt;&gt; 和 &lt;&lt;"></a>&gt;&gt; 和 &lt;&lt;</h3><p>‘&gt;&gt;’ 右移  除2<br>‘&lt;&lt;’ 左移  乘2</p>
+<h3 id="math-isclose-a-b-rel-tol-1e-9"><a href="#math-isclose-a-b-rel-tol-1e-9" class="headerlink" title="math.isclose(a, b, rel_tol=1e-9)"></a>math.isclose(a, b, rel_tol=1e-9)</h3><p>浮点数相等的比较，由于存在精度的关系，不能使用==判断，要用math模块的isclose方法。</p>
+<pre><code class="python">&gt;&gt;&gt; import math
+&gt;&gt;&gt; math.isclose(1.0, 1.0000000001)
+True
+&gt;&gt;&gt; math.isclose(1.0, 1.0000000001, rel_tol=1e-10)
+False</code></pre>
+<h3 id="和-is"><a href="#和-is" class="headerlink" title="== 和 is"></a>== 和 is</h3><p>is 判断的是a对象是否是b对象，是通过id来判断<br>== 判断的是a对象的值和b对象的值和类型是否相等，是通过value和type来判断</p>
+<pre><code class="python">&gt;&gt;&gt; a = 1
+&gt;&gt;&gt; b = 1.0
+&gt;&gt;&gt; a is b
+False
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; id(a)
+12777000
+&gt;&gt;&gt; id(b)
+14986000
+&gt;&gt;&gt; a = 1
+&gt;&gt;&gt; b = 1
+&gt;&gt;&gt; a is b
+True
+&gt;&gt;&gt; a == b
+True
+&gt;&gt;&gt; id(a)
+12777000
+&gt;&gt;&gt; id(b)
+12777000</code></pre>
+<h2 id="break-和-continue"><a href="#break-和-continue" class="headerlink" title="break 和 continue"></a>break 和 continue</h2><p>break可以提前结束一层循环，continue可以提前结束一次循环。</p>
+<h2 id="循环else"><a href="#循环else" class="headerlink" title="循环else"></a>循环else</h2><h2 id="assert"><a href="#assert" class="headerlink" title="assert"></a>assert</h2><p><code>assert 要判断表达式, &#39;字符串&#39;</code></p>
+<pre><code class="python">i = 0
+mySum = 0
+while i &lt; 5:
+    mySum += i
+    i += 1
+
+assert mySum == 15, &#39;mySum不等于15&#39;
+print(&#39;mySum = {}&#39;.format(mySum))</code></pre>
+<p>输出结果：</p>
+<pre><code>Traceback (most recent call last):
+  File &quot;d:/Projects/ch04/4.17-assert.py&quot;, line 9, in &lt;module&gt;
+    assert mySum == 15, &#39;mySum不等于15&#39;
+AssertionError: mySum不等于15</code></pre><p><strong>当判断的表达式为真时，assert语句不做任何动作，当表达式为假时，会触发异常，并将字符串内容输出。字符串可以省略。</strong></p>
+<h2 id="复合数据类型"><a href="#复合数据类型" class="headerlink" title="复合数据类型"></a>复合数据类型</h2><h3 id="find-和-index"><a href="#find-和-index" class="headerlink" title="find 和 index"></a>find 和 index</h3><p>find: 查找字符串，严格区分大小写，返回值为字符串第一次出现所在的索引，后面的不管；未找到字符串，返回-1<br>index: 基本等同于find，区别：如果index查找不到，给出异常错误。</p>
+<h3 id="列表的添加-插入-删除"><a href="#列表的添加-插入-删除" class="headerlink" title="列表的添加/插入/删除"></a>列表的添加/插入/删除</h3><pre><code class="python">mylist = [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;]
+mylist.append(&#39;defg&#39;)  # [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;, &#39;defg&#39;]
+
+# append 添加，把添加内容直接作为元素添加
+appendlist = [&#39;aaa&#39;, &#39;bbb&#39;]
+mylist.append(appendlist)   # [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;, [&#39;aaa&#39;, &#39;bbb&#39;]]
+
+# extend 添加，把列表拆成元素添加
+extendlist = [&#39;aaa&#39;, &#39;bbb&#39;]
+mylist.extend(extendlist)   # [&#39;abcd&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;, &#39;aaa&#39;, &#39;bbb&#39;]
+
+# insert 在index位置前插入元素
+mylist.insert(1, &#39;defg&#39;)    # [&#39;abcd&#39;, &#39;defg&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;]
+
+# insert对于列表的插入，等同于append做法
+mylist.insert(1, appendlist)   # [&#39;abcd&#39;, [&#39;aaa&#39;, &#39;bbb&#39;], &#39;zhangsan&#39;, &#39;jiangning&#39;]
+
+# 对列表元素进行修改，使用索引定位到元素，直接赋值修改
+mylist[1] = &#39;lisi&#39;  [&#39;abcd&#39;, &#39;lisi&#39;, &#39;zhangsan&#39;, &#39;jiangning&#39;]
+
+# del删除给定下标的元素
+mylist = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;]
+del(mylist[1])   # [&#39;a&#39;, &#39;c&#39;, &#39;a&#39;, &#39;b&#39;]
+
+# pop删除最后一个或指定索引的元素
+mylist.pop()  # [&#39;a&#39;, &#39;c&#39;, &#39;a&#39;]
+
+# remove 删除指定值的元素
+# 一次只删除一个
+mylist.remove(&#39;a&#39;)    # [&#39;c&#39;, &#39;a&#39;]
+mylist.remove(&#39;a&#39;)    # [&#39;c&#39;]</code></pre>
+<h3 id="sort-sorted-reverse-reversed"><a href="#sort-sorted-reverse-reversed" class="headerlink" title="sort()  sorted()  reverse()  reversed()"></a>sort()  sorted()  reverse()  reversed()</h3><ul>
+<li><p>sort方法和sorted函数：排序使用<br>sort方法: 列表对象有一个sort()方法，实现将原列表进行一个排序，然后return，因为python 默认return返回一个None,所以非要将lst.sort()指向一个变量，那么这个变量值就是None<br><img src="https://i.loli.net/2019/11/06/uDiWtI1LMxeofac.png" alt="sort方法" title="sort方法"><br>sorted函数: sorted()是一个函数，即面向过程，将排序过程进行一个封装，按照不同的对象进行处理，不同的对象最后统一都是以列表的形式返回数据，即 return a_lst<br><img src="https://i.loli.net/2019/11/06/gCmXtq2okPy1McI.png" alt="sorted函数" title="sorted函数"></p>
+</li>
+<li><p>reverse方法和reversed函数：反转序列使用<br>reverse方法: 实现与sort()方法基本一致，功能的差异是对一个列表进行反转然后return，同样因为python 默认return返回一个None,所以当非要将lst.reverse()指向一个变量，那么这个变量值也是None<br><img src="https://i.loli.net/2019/11/06/RICP3bFkplZvUnV.png" alt="reverse方法" title="reverse方法"><br>reversed函数: 与sorted函数不同的是，reversed函数不是返回一个反转后的列表或者字符串，而是返回一个内存对象，且不支持字典的反转， 返回反向迭代器<br><img src="https://i.loli.net/2019/11/06/JHT9bL6o8f4YryM.png" alt="reversed函数" title="reversed函数"></p>
+</li>
+</ul>
+<p>sort和reverse是列表对象的方法，列表对象独有的方法，并且这两种方法都是在原列表上进行操作，并直接返回，返回值为None<br>sorted函数是支持字符串，字典，列表对象的排序，不在原列表上排序，而是返回一个新的列表，reveresd函数较为特殊，返回一个内存对象，而不是反转后的值</p>
+<h3 id="dict-key-和-dict-get-key"><a href="#dict-key-和-dict-get-key" class="headerlink" title="dict[key] 和 dict.get(key)"></a>dict[key] 和 dict.get(key)</h3><p>一般对于字典取值会有dict[key]的方法取值，但是如果键key不存在，则会出现报错</p>
+<pre><code class="python">&gt;&gt;&gt;a = {&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}
+
+&gt;&gt;&gt;a[&#39;one&#39;]           
+1
+
+&gt;&gt;&gt;a[&#39;four&#39;]           
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: &#39;four&#39;</code></pre>
+<p>因为 dict[key] 的方式在无法判断是否存在 key 的情况下会出现 KeyError ，所以 可以使用dict.get(key[,default]) 的方法。</p>
+<p>dict.get(key[,default]) 会查询字典中的key键，要是存在key键，则返回key键的值，要是没有key键，则返回 default， 若是没有 default，则返回 None。</p>
+<pre><code class="python">&gt;&gt;&gt; a.get(&#39;four&#39;)   # 返回None
+
+&gt;&gt;&gt; a.get(&#39;four&#39;,&#39;can not find four&#39;)   # 返回default
+&#39;can not find four&#39;
+
+&gt;&gt;&gt;a  # 使用dict.get()后dict不变
+{&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}</code></pre>
+<p><em>dict.setdefault(key[,default]) 表示：如果dict中存在key，则返回key的值， 如果不存在key，则返回default的值，并且在dict中增加 key: default 键值对，如果 default 不存在，则在dict增加 key:None 的键值对。</em></p>
+<pre><code class="python">&gt;&gt;&gt;a
+{&#39;one&#39;:1,&#39;two&#39;:2,&#39;three&#39;:3}
+&gt;&gt;&gt; a.setdefault(&#39;four&#39;,4)     # a 没有 &#39;four&#39;键，返回default, a 增加&#39;four&#39;:4键值对
+4
+&gt;&gt;&gt; a  
+{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3, &#39;four&#39;: 4}
+&gt;&gt;&gt; a.setdefault(&#39;five&#39;)     # a没有&#39;five&#39;键，没有default，返回None，a增加&#39;five&#39;:None键值对
+&gt;&gt;&gt; a
+{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3, &#39;four&#39;: 4, &#39;five&#39;: None}
+&gt;&gt;&gt; a.setdefault(&#39;one&#39;)
+1
+&gt;&gt;&gt; a
+{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3, &#39;four&#39;: 4, &#39;five&#39;: None}</code></pre>
+<h3 id="字典删除"><a href="#字典删除" class="headerlink" title="字典删除"></a>字典删除</h3><ul>
+<li>clear 清空字典的内容，字典还在  dict.clear()</li>
+<li>del:</li>
+</ul>
+<ul>
+<li>del(dict) 将删除整个字典</li>
+<li>del(dict[‘key’])  删除的是键值对，是整个元素</li>
+</ul>
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><h3 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h3><p>[起始位置:结束位置:步长]<br>步长到达位置的元素被取出，如果超出结束位置的话，结束，不报错，超出的部分取不到元素</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="args-和-kwargs"><a href="#args-和-kwargs" class="headerlink" title="**args 和 **kwargs"></a>**args 和 **kwargs</h3><p>**args 传入多个数据组成元组<br>**kwargs 传入多个键值对组成字典</p>
+<h3 id="局部变量-全局变量-global"><a href="#局部变量-全局变量-global" class="headerlink" title="局部变量 全局变量 global"></a>局部变量 全局变量 global</h3><pre><code class="python">def main():
+    print(a)
+a = 1
+main()</code></pre>
+<p>运行结果：</p>
+<pre><code class="python">1</code></pre>
+<p>函数只能使用在它调用之前定义过的变量：</p>
+<pre><code class="python">def main():
+    print(a)
+main()
+a = 1</code></pre>
+<p>运行报错</p>
+<pre><code class="python">def main():
+    a = 2
+    print(&#39;函数体内部a=&#39; + a)
+a = 1
+main()
+print(&#39;函数体外部a=&#39; + a)</code></pre>
+<p>函数内的变量a是局部变量不会对全局变量造成影响，运行结果：</p>
+<pre><code>函数体内部a=2
+函数体外部a=1</code></pre><pre><code class="python">def main():
+    global a
+    a = 2
+    print(&#39;函数体内部a=&#39; + a)
+a = 1
+main()
+print(&#39;函数体外部a=&#39; + a)</code></pre>
+<p>运行结果：</p>
+<pre><code>函数体内部a=2
+函数体外部a=2</code></pre><pre><code class="python">def fun1():
+    a1 = 1
+    def fun2():
+        a1 = a1 * 2
+        print(a1)
+    return fun2()
+fun1()</code></pre>
+<p>运行报错，a1也不是全局变量不能用global,</p>
+<pre><code class="python">def fun1():
+    a1 = 1
+    def fun2():
+        nonlocal a1
+        a1 = a1 * 2
+        print(a1)
+    return fun2()
+fun1()</code></pre>
+<p>运行结果</p>
+<pre><code>2</code></pre><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><pre><code class="python">def out(a):  # 定义一个函数out(),形参为a
+    def In():  # 在函数内部在定义一个函数In()
+        print(a)  # 在In()函数内打印变量a
+    return In  # 在out()函数内返回In的指针
+out(1)   # 运行结果为In的指针
+# 调用函数out,实参为1,此时将返回函数In的指针
+# out函数在运行结束后，变量a也将释放，那么理论上，函数In是访问不到a变量的
+# 因此如果调用这个In函数的话，应该会报错
+out(1)()  # 运行结果为1
+# 说明内层函数In依旧可以访问变量a
+# 这是因为当 内层函数 调用了 外层函数 作用域中的“变量”时，外层函数运行调用结束后，将会把内层函数涉及到的变量“送”给内层函数以保证其正常运行，这就是所谓的闭包
+#  闭包 = 函数块 + 创建它时的环境</code></pre>
+<h3 id="dir"><a href="#dir" class="headerlink" title="dir()"></a>dir()</h3><p>使用dir或help函数确定一个对象有哪些属性可供使用。<br>使用type函数确定这些对象都是什么类型，例如是函数还是变量。<br>使用help函数或对象的<strong>doc</strong>属性查看对象的的说明文档。</p>
+<h3 id="if-name-‘-main-‘"><a href="#if-name-‘-main-‘" class="headerlink" title="if __name__ == ‘__main__‘:"></a>if __name__ == ‘__main__‘:</h3><p>if __name__ == ‘__main__‘ 可以保证脚本在以模块导入的时候不会自动执行最外层–函数定义以外的代码</p>
+<h2 id="标准库"><a href="#标准库" class="headerlink" title="标准库"></a>标准库</h2><h3 id="文件读写"><a href="#文件读写" class="headerlink" title="文件读写"></a>文件读写</h3><p>read()会一次性读取文件的全部内容<br>read(size)每次最多读取size个字节的内容<br>readline()可以每次读取一行内容<br>readlines()一次读取所有内容并按行返回list</p>
+<p>seek函数可以实现文件里的定位读写</p>
+<pre><code class="python">seek(offset, from_what)</code></pre>
+<p>offset参数：偏移量。<br>from_what：偏移量的起始位置。0：文件开头；1：当前位置；2：文件结尾。默认为0</p>
+<h3 id="datetime"><a href="#datetime" class="headerlink" title="datetime"></a>datetime</h3><pre><code>           +-- date 日期对象,常用的属性有year, month, day
+           +-- time 时间对象
+           +-- datetime 日期时间对象,常用的属性有hour, minute, second, microsecond
+datetime - |
+           +-- datetime_CAPI 日期时间对象C语言接口
+           +-- timedelta 时间间隔，即两个时间点之间的长度
+           +-- tzinfo 时区信息对象</code></pre><ol>
+<li>date类</li>
+</ol>
+<ul>
+<li>date对象由year年份、month月份及day日期三部分构成<pre><code>date（year，month，day)</code></pre>通过year, month, day三个数据描述符可以进行访问<pre><code class="python">&gt;&gt;&gt; a = datetime.date.today()
+&gt;&gt;&gt; a
+datetime.date(2018, 7, 5)
+&gt;&gt;&gt; a.year
+2018
+&gt;&gt;&gt; a.month
+7
+&gt;&gt;&gt; a.day
+5</code></pre>
+当然，你也可以用<strong>getattribute</strong>(…)方法获得上述值<pre><code class="python">&gt;&gt;&gt; a.__getattribute__(&#39;year&#39;)
+2018
+&gt;&gt;&gt; a.__getattribute__(&#39;month&#39;)
+7
+&gt;&gt;&gt; a.__getattribute__(&#39;day&#39;)
+5</code></pre>
+</li>
+<li>date对象中包含的方法与属性<pre><code>方法名          方法说明            用法
+__eq__(…)     等于(x==y)         x.__eq__(y)
+__ge__(…)     大于等于(x&gt;=y)     x.__ge__(y)
+__gt__(…)     大于(x&gt;y)         x.__gt__(y)
+__le__(…)     小于等于(x&lt;=y)     x.__le__(y)
+__lt__(…)     小于(x&lt;y)        x.__lt__(y)
+__ne__(…)     不等于(x!=y)     x.__ne__(y)
+__sub__(…)     x - y             x.__sub__(y)
+__rsub__(…)     y - x             x.__rsub__(y)</code></pre>使用<strong>sub</strong>(…)和<strong>rsub</strong>(…)方法，获得二个日期相差多少天, 其实二个方法差不太多，一个是正向操作，一个是反向操作,计算结果的返回值类型为datetime.timedelta<pre><code class="python">&gt;&gt;&gt; a
+datetime.date(2018, 7, 5)
+&gt;&gt;&gt; b
+datetime.date(2018, 7, 12)
+&gt;&gt;&gt; a.__sub__(b)
+datetime.timedelta(-7)
+&gt;&gt;&gt; a.__rsub__(b)
+datetime.timedelta(7)</code></pre>
+如果获得整数类型的结果则按下面的方法操作</li>
+</ul>
+<pre><code class="python">&gt;&gt;&gt; a.__sub__(b).days
+-7
+&gt;&gt;&gt; a.__rsub__(b).days
+7</code></pre>
+<p>……<br>……<br>……<br>……<br>……<br>……</p>
+<h3 id="re模块"><a href="#re模块" class="headerlink" title="re模块"></a>re模块</h3><p>……</p>
+<h2 id="多线程和多进程"><a href="#多线程和多进程" class="headerlink" title="多线程和多进程"></a>多线程和多进程</h2><h3 id="怎么实现多线程"><a href="#怎么实现多线程" class="headerlink" title="怎么实现多线程"></a>怎么实现多线程</h3><h3 id="线程和进程的关系"><a href="#线程和进程的关系" class="headerlink" title="线程和进程的关系"></a>线程和进程的关系</h3><h3 id="run-start"><a href="#run-start" class="headerlink" title="run()  start()"></a>run()  start()</h3><h3 id="GIL-全局解释锁a"><a href="#GIL-全局解释锁a" class="headerlink" title="GIL 全局解释锁a"></a>GIL 全局解释锁a</h3><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="init-…"><a href="#init-…" class="headerlink" title="__init__ …"></a>__init__ …</h3><h3 id="类-对象"><a href="#类-对象" class="headerlink" title="类 对象"></a>类 对象</h3><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>try…except…else…finally</p>
+<h2 id="列表推倒式-迭代器-生成器"><a href="#列表推倒式-迭代器-生成器" class="headerlink" title="列表推倒式 迭代器  生成器"></a>列表推倒式 迭代器  生成器</h2><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器的详细部分，<a href="https://luyuonism.github.io/2018/06/05/decorator/">点击这里</a></p>
+<h2 id="lamba-map-reduce-filter"><a href="#lamba-map-reduce-filter" class="headerlink" title="lamba  map()  reduce()  filter()"></a>lamba  map()  reduce()  filter()</h2>
+  </article>
+  
+    
+<div class="nexmoe-post-copyright">
+<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+<strong>本文作者：</strong>ruijielu<br>
+<strong>本文链接：</strong><a href="https://luyuonism.github.io/2018/07/05/python-basis/" title="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2018&#x2F;07&#x2F;05&#x2F;python-basis&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2018&#x2F;07&#x2F;05&#x2F;python-basis&#x2F;</a><br>
+
+  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+
+</div>
+
+
+  
+  <section class="nexmoe-comment">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
+<div id="gitalk"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+        clientID: '6697f1e2bc68a9625fed',
+        clientSecret: '173e837a4a0788e2d0c2ecfe68911cd3a3efc2d1',
+        id: window.location.pathname,
+        repo: 'https://luyuonism.github.io',
+        owner: 'luyuonism',
+        admin: 'luyuonism'
+    })
+    gitalk.render('gitalk')
+</script>
+</section>
+</div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+ 
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/smoothscroll-for-websites@1.4.9/SmoothScroll.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="/js/app.js?v=1573462954053"></script>
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
+
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+  
+
+
+
+
+
+</body>
+
+</html>
