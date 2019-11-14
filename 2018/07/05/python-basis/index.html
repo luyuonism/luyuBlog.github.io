@@ -24,7 +24,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;gCmXtq2okPy1McI.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;RICP3bFkplZvUnV.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;JHT9bL6o8f4YryM.png">
-<meta property="og:updated_time" content="2019-11-11T01:26:57.916Z">
+<meta property="og:updated_time" content="2019-11-14T06:39:07.304Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;06&#x2F;aGwNEdLhom9B4QM.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -34,7 +34,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573475441172">
+  <link rel="stylesheet" href="/css/style.css?v=1573715243680">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -187,8 +187,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年07月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>2,985 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 12 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>5,890 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 24 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -481,15 +481,278 @@ datetime.date(2018, 7, 12)
 datetime.timedelta(-7)
 &gt;&gt;&gt; a.__rsub__(b)
 datetime.timedelta(7)</code></pre>
-如果获得整数类型的结果则按下面的方法操作</li>
+如果获得整数类型的结果则按下面的方法操作<br>``` python<blockquote>
+<blockquote>
+<blockquote>
+<p>a.<strong>sub</strong>(b).days</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
 </ul>
-<pre><code class="python">&gt;&gt;&gt; a.__sub__(b).days
--7
-&gt;&gt;&gt; a.__rsub__(b).days
-7</code></pre>
-<p>……<br>……<br>……<br>……<br>……<br>……</p>
+<p>-7</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>a.<strong>rsub</strong>(b).days<br>7</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<pre><code>* ISO标准化日期
+`isocalender()` 返回一个包含三个值的元组，三个值依次为：year年份，week number周数，weekday星期数（周一为1…周日为7)
+``` py
+&gt;&gt;&gt; a
+datetime.date(2018, 7, 5)
+&gt;&gt;&gt; a.isocalendar()
+(2018, 7, 5)</code></pre><p><code>isoformat()</code> 返回符合ISO 8601标准 ( <code>YYYY-MM-DD</code> ) 的日期字符串</p>
+<pre><code class="py">&gt;&gt;&gt; a.isoformat()
+&#39;2018-07-05&#39;</code></pre>
+<p><code>isoweekday()</code> 返回符合ISO标准的指定日期所在的星期数（周一为1…周日为7)<br>与 <code>isoweekday()</code> 相似的还有一个 <code>weekday()</code> 方法，只不过是 <code>weekday()</code> 方法返回的周一为 0, 周日为 6</p>
+<ul>
+<li>日期的字符串输出</li>
+</ul>
 <h3 id="re模块"><a href="#re模块" class="headerlink" title="re模块"></a>re模块</h3><p>……</p>
-<h2 id="多线程和多进程"><a href="#多线程和多进程" class="headerlink" title="多线程和多进程"></a>多线程和多进程</h2><h3 id="怎么实现多线程"><a href="#怎么实现多线程" class="headerlink" title="怎么实现多线程"></a>怎么实现多线程</h3><h3 id="线程和进程的关系"><a href="#线程和进程的关系" class="headerlink" title="线程和进程的关系"></a>线程和进程的关系</h3><h3 id="run-start"><a href="#run-start" class="headerlink" title="run()  start()"></a>run()  start()</h3><h3 id="GIL-全局解释锁a"><a href="#GIL-全局解释锁a" class="headerlink" title="GIL 全局解释锁a"></a>GIL 全局解释锁a</h3><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="init-…"><a href="#init-…" class="headerlink" title="__init__ …"></a>__init__ …</h3><h3 id="类-对象"><a href="#类-对象" class="headerlink" title="类 对象"></a>类 对象</h3><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>try…except…else…finally</p>
+<h2 id="多线程和多进程"><a href="#多线程和多进程" class="headerlink" title="多线程和多进程"></a>多线程和多进程</h2><p><strong>进程是操作系统分配程序执行资源的单位，而线程是进程的一个实体，是CPU调度和分配的单位。一个进程肯定有一个主线程，我们可以在一个进程里创建多个线程来实现多任务。</strong><br>实现多任务:</p>
+<ul>
+<li>在主进程里面开启多个子进程，主进程和多个子进程一起处理任务。<pre><code class="py">import multiprocessing
+import time
+</code></pre>
+</li>
+</ul>
+<p>def task1():<br>    while True:<br>        time.sleep(1)<br>        print(“I am task1”)</p>
+<p>def task2():<br>    while True:<br>        time.sleep(2)<br>        print(“I am task2”)</p>
+<p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    p1 = multiprocessing.Process(target=task1)  # multiprocessing.Process创建了子进程对象p1<br>    p2 = multiprocessing.Process(target=task2)  # multiprocessing.Process创建了子进程对象p2<br>    p1.start()  # 子进程p1启动<br>    p2.start()  # 子进程p2启动<br>    print(“I am main task”)  # 这是主进程的任务</p>
+<p>输出结果：<br>I am main task<br>I am task1<br>I am task2<br>I am task1<br>I am task1<br>I am task2<br>I am task1<br>I am task1<br>I am task2<br>…</p>
+<pre><code>(1) 并发:当任务数大于cpu核数时，通过操作系统的各种任务调度算法，实现多个任务“一起”执行。（实际上总有一些任务不在执行，因为切换任务相当快，看上去想同时执行而已。)
+(2) 当是并发的情况下，子进程与主进程的运行都是没有顺序的，CPU会采用时间片轮寻的方式，哪个程序先要运行就先运行哪个。
+(3) 主进程会默认等待所有子进程执行完毕后，它才会退出。
+(4) 主进程默认创建的是非守护进程。如果子进程是守护进程的话，那么主进程运行完最后一句代码后，主进程会直接关闭，不管子进程运行完了没有
+``` py
+import multiprocessing
+import time
+
+def task1():
+    while True:
+        time.sleep(1)
+        print(&quot;I am task1&quot;)
+
+def task2():
+    while True:
+        time.sleep(2)
+        print(&quot;I am task2&quot;)
+
+if __name__ == &#39;__main__&#39;:
+    p1 = multiprocessing.Process(target=task1)
+    p2 = multiprocessing.Process(target=task2)
+    p1.daemon = True  # 设置p1子进程为守护进程
+    p2.daemon = True  # 设置p2子进程为守护进程
+    p1.start()
+    p2.start()
+    print(&quot;I am main task&quot;)
+
+输出结果：
+I am main task</code></pre><p>当主进程结束后，会发一个消息给子进程(守护进程)，守护进程收到消息，则立即结束<br>CPU是按照时间片轮寻的方式来运行多进程的。哪个合适的哪个运行，如果你的子进程里都有time.sleep。那我CPU为了不浪费资源，肯定先去干点其他的事情啊<br>因此，守护进程主要用来做与业务无关的任务，无关紧要的任务，可有可无的任务，比如内存垃圾回收，某些方法的执行时间的计时等<br><strong>进程之间是不可以共享全局变量的，即使子进程与主进程。道理很简单，一个新的进程，其实就是占用一个新的内存空间，不同的内存空间，里面的变量肯定不能够共享的。</strong></p>
+<ul>
+<li>在主进程里开启多个子线程，主线程和多个子线程一起处理任务。</li>
+<li>在主进程里开启多个协程，多个协程一起处理任务。<br>(1) yield生成器实现协程<pre><code class="py">import time
+</code></pre>
+</li>
+</ul>
+<p>def work1():<br>    while True:<br>        print(“我是任务1”)<br>        yield<br>        time.sleep(1)</p>
+<p>def work2():<br>    while True:<br>        print(“我是任务2”)<br>        yield<br>        time.sleep(1)</p>
+<p>w1 = work1()  # 取得work1函数的生成器<br>w2 = work2()  # 取得work2函数的生成器</p>
+<p>while True:<br>    next(w1)<br>    next(w2)</p>
+<p>输出：<br>我是任务1<br>我是任务2<br>我是任务1<br>我是任务2<br>我是任务1<br>我是任务2<br>……</p>
+<pre><code>在一个进程里面，没有开线程，只有一个主进程主线程，也能实现多任务。因此说协程也能实现多任务，实现的方式是通过yield生成器来实现的。我们先唤醒第一个生成器，执行到yield，暂停。然后我们再唤醒第二个生成器，执行到yield，暂停。再唤醒第一个生成器，依次循环。（用while True来实现依次唤醒）
+(2) 用greenlet模块中的greenlet类来实现协程
+``` py
+import time
+import greenlet
+
+def work1():
+    while True:
+        print(&quot;我是任务1&quot;)
+        g2.switch()  # 转换到任务2
+        time.sleep(1)
+
+def work2():
+    while True:
+        print(&quot;我是任务2&quot;)
+        g1.switch()  # 转换到任务1
+        time.sleep(1)
+
+g1 = greenlet.greenlet(run=work1)
+g2 = greenlet.greenlet(run=work2)
+g1.switch()  # 转换到任务1，其实就是开始执行任务1的意思
+
+输出：
+我是任务1
+我是任务2
+我是任务1
+我是任务2
+我是任务1
+我是任务2
+......</code></pre><p>greenlet类虽然能实现协程，但是每个任务都要用switch()方法转换到另一个任务。如果很多很多任务，每个任务都要带这么一段代码，是不是很烦。还要考虑切换顺序什么的。所以，greenlet又被封装到gevent模块的spawn类里。<br>(3) gevent模块的spawn类来实现协程<br>gevent的原理是当一个greenlet遇到IO(指的是input output 输入输出，比如网络、文件操作等)操作时，比如访问网络，就自动切换到其他的greenlet，等到IO操作完成，再在适当的时候切换回来继续执行。由于IO操作非常耗时，经常使程序处于等待状态，有了gevent为我们自动切换协程，就保证总有greenlet在运行，而不是等待IO。</p>
+<pre><code class="py">import gevent
+import time
+from gevent import monkey  # 这个类一定要这样子导入才能识别！
+
+monkey.patch_all()  # 如果不打这个补丁的话，系统是识别不了原生python代码的time.sleep的
+                                 # 所以就不能按在适当的时候切换任务
+
+def work1(n):
+    i = 0
+    while True:
+        print(&quot;我是任务1&quot;)
+        time.sleep(1)
+        i += 1
+        if i&gt;n:
+            break
+
+def work2(n):
+    i = 0
+    while True:
+        print(&quot;我是任务2&quot;)
+        time.sleep(2)
+        i += 1
+        if i&gt;n:
+            break
+
+g1 = gevent.spawn(work1,4)  # 开启g1协程，且阻塞主线程，直到g1协成任务执行完毕，再解主线程的阻塞
+g2 = gevent.spawn(work2,4)
+g1.join()
+g2.join()  # join方法既可以启动协程，又可以阻塞主线程，等到该协程完成任务后再解阻塞。
+print(&quot;我会在哪里？&quot;)
+
+输出：
+我是任务1
+我是任务2
+我是任务1
+我是任务2
+我是任务1
+我是任务1
+我是任务2
+我是任务1
+我是任务2
+我是任务2
+我会在哪里？</code></pre>
+<h3 id="怎么实现多线程"><a href="#怎么实现多线程" class="headerlink" title="怎么实现多线程"></a>怎么实现多线程</h3><pre><code class="py">import threading
+p1 = threading.Thread(target=[函数名],args=([要传入函数的参数]))
+p1.start()  # 启动p1线程</code></pre>
+<p>假如使用网易云音乐一边听歌一边下载。网易云音乐就是一个进程。假设网易云音乐内部程序是用多线程来实现多任务的，网易云音乐开两个子线程。一个用来缓存音乐，用于现在的播放。一个用来下载用户要下载的音乐的。这时候的代码框架是这样的：</p>
+<pre><code class="py">import threading
+import time
+
+def listen_music(name):
+    while True:
+        time.sleep(1)
+        print(name,&quot;正在播放音乐&quot;)
+
+def download_music(name):
+    while True:
+        time.sleep(2)
+        print(name,&quot;正在下载音乐&quot;)
+
+if __name__ == &#39;__main__&#39;:
+    p1 = threading.Thread(target=listen_music,args=(&quot;网易云音乐&quot;,))
+    p2 = threading.Thread(target=download_music,args=(&quot;网易云音乐&quot;,))
+    p1.start()
+    p2.start()
+
+输出：
+网易云音乐 正在播放音乐
+网易云音乐 正在下载音乐
+网易云音乐 正在播放音乐
+网易云音乐 正在播放音乐
+网易云音乐 正在下载音乐
+网易云音乐 正在播放音乐
+网易云音乐 正在播放音乐
+网易云音乐 正在下载音乐
+网易云音乐 正在播放音乐
+网易云音乐 正在播放音乐
+网易云音乐 正在播放音乐
+......</code></pre>
+<p>(1) CPU是按照时间片轮询的方式来执行子线程的。cpu内部会合理分配时间片。时间片到a程序的时候，a程序如果在休眠，就会自动切换到b程序。<br>(2) 严谨来说，CPU在某个时间点，只在执行一个任务，但是由于CPU运行速度和切换速度快，因为看起来像多个任务在一起执行而已。<br>还有另一种方法,可以编写一个类，继承threaing.Thread类，然后重写父类的run方法。</p>
+<pre><code class="py">import threading
+import time
+
+class MyThread(threading.Thread):
+    def run(self):
+        for i in range(5):
+            time.sleep(1)
+            print(self.name,i)
+
+t1 = MyThread()
+t2 = MyThread()
+t3 = MyThread()
+t1.start()
+t2.start()
+t3.start()
+
+输出：
+Thread-1 0
+Thread-3 0
+Thread-2 0
+Thread-1 1
+Thread-2 1
+Thread-3 1
+Thread-1 2
+Thread-3 2
+Thread-2 2
+Thread-1 3
+Thread-2 3
+Thread-3 3
+Thread-1 4
+Thread-2 4
+Thread-3 4</code></pre>
+<p>(1) 子线程何时开启，何时运行<br>当调用thread.start()时 开启线程，再运行线程的代码<br>(2) 子线程何时结束<br>子线程把target指向的函数中的语句执行完毕后，或者线程中的run函数代码执行完毕后，立即结束当前子线程<br>(3) 查看当前线程数量<br>通过threading.enumerate()可枚举当前运行的所有线程<br>(4) 主线程何时结束<br>所有子线程执行完毕后，主线程才结束</p>
+<pre><code class="py">import threading
+import time
+
+def run():
+    for i in range(5):
+        time.sleep(1)
+        print(i)
+
+t1 = threading.Thread(target=run)
+t1.start()
+print(&quot;我会在哪里出现&quot;)
+
+输出：
+我会在哪里出现
+0
+1
+2
+3
+4</code></pre>
+<p>为什么主进程（主线程）的代码会先出现呢？因为CPU采用时间片轮询的方式，如果轮询到子线程，发现他要休眠1s，他会先去运行主线程。所以说CPU的时间片轮询方式可以保证CPU的最佳运行。</p>
+<p>如果想主进程输出的那句话运行在结尾,就需要用到 join() 方法。</p>
+<pre><code class="py">import threading
+import time
+
+def run():
+    for i in range(5):
+        time.sleep(1)
+        print(i)
+
+t1 = threading.Thread(target=run)
+t1.start()
+t1.join()  
+print(&quot;我会在哪里出现&quot;)
+
+输出：
+0
+1
+2
+3
+4
+我会在哪里出现</code></pre>
+<p>join() 方法可以阻塞主线程（注意只能阻塞主线程，其他子线程是不能阻塞的），直到 t1 子线程执行完，再解阻塞。</p>
+<p>多线程的优势在于可以同时运行多个任务（至少感觉起来是这样）。但是当线程需要共享数据时，可能存在数据不同步的问题：多个线程共同对某个数据修改，则可能出现不可预料的结果。为了保证数据的正确性，需要对多个线程进行同步。<br>线程同步能够保证多个线程安全访问竞争资源，最简单的同步机制是引入互斥锁。<br>互斥锁为资源引入一个状态：锁定/非锁定<br>某个线程要更改共享数据时，先将其锁定，此时资源的状态为“锁定”，其他线程不能更改；直到该线程释放资源，将资源的状态变成“非锁定”，其他的线程才能再次锁定该资源。互斥锁保证了每次只有一个线程进行写入操作，从而保证了多线程情况下数据的正确性。<br>互斥锁有三个常用步骤</p>
+<pre><code class="py">lock = threading.Lock()  # 取得锁
+lock.acquire()  # 上锁
+lock.release()  # 解锁</code></pre>
+<h3 id="线程和进程的关系"><a href="#线程和进程的关系" class="headerlink" title="线程和进程的关系"></a>线程和进程的关系</h3><h3 id="run-start"><a href="#run-start" class="headerlink" title="run()  start()"></a>run()  start()</h3><h3 id="GIL-全局解释锁a"><a href="#GIL-全局解释锁a" class="headerlink" title="GIL 全局解释锁a"></a>GIL 全局解释锁a</h3><h2 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h2><h3 id="init-…"><a href="#init-…" class="headerlink" title="__init__ …"></a>__init__ …</h3><h3 id="类-对象"><a href="#类-对象" class="headerlink" title="类 对象"></a>类 对象</h3><h2 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h2><p>try…except…else…finally</p>
 <h2 id="列表推倒式-迭代器-生成器"><a href="#列表推倒式-迭代器-生成器" class="headerlink" title="列表推倒式 迭代器  生成器"></a>列表推倒式 迭代器  生成器</h2><h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>装饰器的详细部分，<a href="https://luyuonism.github.io/2018/06/05/decorator/">点击这里</a></p>
 <h2 id="lamba-map-reduce-filter"><a href="#lamba-map-reduce-filter" class="headerlink" title="lamba  map()  reduce()  filter()"></a>lamba  map()  reduce()  filter()</h2>
   </article>
@@ -538,7 +801,7 @@ datetime.timedelta(7)</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573475441174"></script>
+<script src="/js/app.js?v=1573715243684"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
