@@ -30,7 +30,8 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;3paj7P1gr9A4UcI.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;dvtKYM4f5Ix3S1G.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;xEajlm7CFnN1HJi.png">
-<meta property="og:updated_time" content="2019-11-15T08:51:29.361Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;epZqE4oX2zWrQwl.png">
+<meta property="og:updated_time" content="2019-11-15T09:04:33.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;xX397KNi8BqISel.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -40,7 +41,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1573808468606">
+  <link rel="stylesheet" href="/css/style.css?v=1573808685921">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -166,7 +167,7 @@
           </li>
         
           <li>
-            <a href="/2018/06/05/django/">Django</a>
+            <a href="/2018/06/05/sql/">MySql</a>
           </li>
         
       </ul>
@@ -193,8 +194,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年03月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>5,934 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 23 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>6,083 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 24 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/interview/" rel="tag">interview</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -204,7 +205,7 @@
     <p>python练习题</p>
 <a id="more"></a>
 
-<p><a href="#python里面如何拷贝一个对象？">python里面如何拷贝一个对象？</a><br><a href="#python的内存管理是怎样的？">python的内存管理是怎样的？</a><br><a href="#什么是lambda函数？它有什么好处？">什么是lambda函数？它有什么好处？</a><br><a href="#python自省">python自省</a><br><a href="#谈一谈python的装饰器">谈一谈python的装饰器</a><br><a href="#python元类">python元类</a><br><a href="#列举Http请求中常见的请求方式">列举Http请求中常见的请求方式</a><br><a href="#谈谈你对HTTP协议的认识">谈谈你对HTTP协议的认识</a><br><a href="#简述MVC模式和MVT模式">简述MVC模式和MVT模式</a><br><a href="#简述Django请求生命周期">简述Django请求生命周期</a></p>
+<p><a href="#python里面如何拷贝一个对象？">python里面如何拷贝一个对象？</a><br><a href="#python的内存管理是怎样的？">python的内存管理是怎样的？</a><br><a href="#什么是lambda函数？它有什么好处？">什么是lambda函数？它有什么好处？</a><br><a href="#python自省">python自省</a><br><a href="#谈一谈python的装饰器">谈一谈python的装饰器</a><br><a href="#python元类">python元类</a><br><a href="#列举Http请求中常见的请求方式">列举Http请求中常见的请求方式</a><br><a href="#谈谈你对HTTP协议的认识">谈谈你对HTTP协议的认识</a><br><a href="#简述MVC模式和MVT模式">简述MVC模式和MVT模式</a><br><a href="#简述Django请求生命周期">简述Django请求生命周期</a><br><a href="#django中间件生命周期">django中间件生命周期</a></p>
 <h2 id="python里面如何拷贝一个对象？"><a href="#python里面如何拷贝一个对象？" class="headerlink" title="python里面如何拷贝一个对象？"></a><a name="#python里面如何拷贝一个对象？">python里面如何拷贝一个对象？</a></h2><ol>
 <li>对象赋值</li>
 </ol>
@@ -538,11 +539,12 @@ Out[13]: 404</code></pre>
 <ol>
 <li>wsgi,请求封装后交给web框架 （Flask、Django）     </li>
 <li>中间件，对请求进行校验或在请求对象中添加其他相关数据，例如：csrf、request.session - </li>
-<li>路由匹配 根据浏览器发送的不同url去匹配不同的视图函数    </li>
+<li>路由匹配根据浏览器发送的不同url去匹配不同的视图函数    </li>
 <li>视图函数，在视图函数中进行业务逻辑的处理，可能涉及到：orm、templates =&gt; 渲染 - </li>
 <li>中间件，对响应的数据进行处理。 </li>
 <li>wsgi,将响应的内容发送给浏览器。<br><img src="https://i.loli.net/2019/11/15/xEajlm7CFnN1HJi.png" alt="django生命周期.png" title="django生命周期"></li>
 </ol>
+<h2 id="django中间件生命周期"><a href="#django中间件生命周期" class="headerlink" title="django中间件生命周期"></a><a name="#django中间件生命周期">django中间件生命周期</a></h2><p>请求过来：<br>中间件：拦截一部分请求；比如验证session, 没有登录的 请求一些页面，跳转至登录页；(图片为中间件的请求过程)再到 urls ，分发请求到views 视图 ，通过 CBV(dispatch反射) 和 FBV 的 get 请求 讲 template 页面渲染返回给用户；渲染之前 可以从数据库拿出数据，放到render 的参数里面传递过去， locals() 表示 把所有参数传递还可以 实例化 其他 form 类，并渲染给前端<br><img src="https://i.loli.net/2019/11/15/epZqE4oX2zWrQwl.png" alt="image.png"></p>
 
   </article>
   
@@ -590,7 +592,7 @@ Out[13]: 404</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1573808468608"></script>
+<script src="/js/app.js?v=1573808685927"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
