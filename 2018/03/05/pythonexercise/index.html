@@ -25,13 +25,14 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;H895qgwMEmsTDUS.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;pCTkmRcHu8j5Doy.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;wAQEXyISLzaPH5c.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;R5WLcdbVGZTQESo.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;9YMgpwvVoNEJKcS.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;cz6oACOWBdjis2P.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;3paj7P1gr9A4UcI.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;dvtKYM4f5Ix3S1G.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;xEajlm7CFnN1HJi.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;epZqE4oX2zWrQwl.png">
-<meta property="og:updated_time" content="2019-11-19T11:16:16.200Z">
+<meta property="og:updated_time" content="2019-11-19T11:45:57.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;xX397KNi8BqISel.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -41,7 +42,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1574162503077">
+  <link rel="stylesheet" href="/css/style.css?v=1574163998536">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -167,7 +168,7 @@
           </li>
         
           <li>
-            <a href="/2018/06/05/sql/">MySql</a>
+            <a href="/2018/06/05/django/">Django</a>
           </li>
         
       </ul>
@@ -194,7 +195,7 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年03月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>7,769 字</a>
+    <a><i class="nexmoefont icon-areachart"></i>7,752 字</a>
     <a><i class="nexmoefont icon-time-circle-fill"></i>大概 30 分钟</a>
     
     
@@ -358,24 +359,21 @@ print(getrefcount(a))
 <pre><code class="py">x = [1, 2, 3]
 y = [x, dict(key1=x)]
 z = [y, (x, y)]
-</code></pre>
-</li>
-</ol>
-<p>import objgraph<br>objgraph.show_refs([z], filename=’ref_topo.png’)</p>
-<pre><code>![引用环.png](https://i.loli.net/2019/11/15/R5WLcdbVGZTQESo.png &#39;引用环&#39;)
-两个对象可能互相引用，从而构成所谓的引用环（reference cycle）
-``` py
-&gt;&gt;&gt; a = []
+import objgraph
+objgraph.show_refs([z], filename=&#39;ref_topo.png&#39;)</code></pre>
+<p><img src="https://i.loli.net/2019/11/15/R5WLcdbVGZTQESo.png" alt="引用环.png" title="引用环"><br>两个对象可能互相引用，从而构成所谓的引用环（reference cycle）</p>
+<pre><code class="py">&gt;&gt;&gt; a = []
 &gt;&gt;&gt; b = [a]
 &gt;&gt;&gt; a.append(b)
 &gt;&gt;&gt; a
-[[[...]]]</code></pre><p>即使是一个对象，只需要自己引用自己，也能构成引用环。</p>
+[[[...]]]</code></pre>
+<p>即使是一个对象，只需要自己引用自己，也能构成引用环。</p>
 <pre><code class="py">&gt;&gt;&gt; a = []
 &gt;&gt;&gt; a.append(a)
 &gt;&gt;&gt; print(getrefcount(a))
 3</code></pre>
 <p>引用环会给垃圾回收机制带来很大的麻烦，后面详细说明。</p>
-<ol start="3">
+</li>
 <li><p>引用减少<br>某个引用对象的引用计数可能减少。比如使用del关键字删除某个引用</p>
 <pre><code class="py">&gt;&gt;&gt; a = [1, 2, 3]
 &gt;&gt;&gt; b = a
@@ -612,7 +610,7 @@ Book.objects.update(price=F(&quot;price&quot;)+20)  # 对于book表中每本书�
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1574162503080"></script>
+<script src="/js/app.js?v=1574163998539"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
