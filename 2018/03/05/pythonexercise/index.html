@@ -32,7 +32,8 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;dvtKYM4f5Ix3S1G.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;xEajlm7CFnN1HJi.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;epZqE4oX2zWrQwl.png">
-<meta property="og:updated_time" content="2019-11-21T01:13:24.621Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;image&#x2F;csrf.png">
+<meta property="og:updated_time" content="2019-11-22T07:38:14.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;i.loli.net&#x2F;2019&#x2F;11&#x2F;15&#x2F;xX397KNi8BqISel.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
@@ -42,7 +43,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1574299062029">
+  <link rel="stylesheet" href="/css/style.css?v=1574562122559">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -168,7 +169,7 @@
           </li>
         
           <li>
-            <a href="/2018/06/05/django/">Django</a>
+            <a href="/2018/06/05/sql/">MySql</a>
           </li>
         
       </ul>
@@ -195,8 +196,8 @@
     </div>
   <div class="nexmoe-post-meta">
     <a><i class="nexmoefont icon-calendar-fill"></i>2018年03月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>8,076 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 32 分钟</a>
+    <a><i class="nexmoefont icon-areachart"></i>9,507 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 37 分钟</a>
     
     
       <a class="nexmoefont icon-tag-fill -link" href="/tags/interview/" rel="tag">interview</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
@@ -605,6 +606,18 @@ b = 20
 c = [a]
 a = 15
 print(c)   # [10]</code></pre>
+<h2 id="python-一行代码实现将-1-N-的整数列表以-3为单位分组"><a href="#python-一行代码实现将-1-N-的整数列表以-3为单位分组" class="headerlink" title="python 一行代码实现将 1-N 的整数列表以 3为单位分组"></a>python 一行代码实现将 1-N 的整数列表以 3为单位分组</h2><pre><code>[[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12], [13, 14, 15], [16, 17, 18], [19, 20, 21], [22, 23, 24], [25, 26, 27], [28, 29, 30], [31, 32, 33], [34, 35, 36], [37, 38, 39], [40, 41, 42], [43, 44, 45], [46, 47, 48], [49, 50, 51], [52, 53, 54], [55, 56, 57], [58, 59, 60], [61, 62, 63], [64, 65, 66], [67, 68, 69], [70, 71, 72], [73, 74, 75], [76, 77, 78], [79, 80, 81], [82, 83, 84], [85, 86, 87], [88, 89, 90], [91, 92, 93], [94, 95, 96], [97, 98, 99], [100]] </code></pre><pre><code class="py">print([[x for x in range(1,101)][i:i+3] for i in range(0,100,3)])</code></pre>
+<h2 id="django开发中数据库做过什么优化"><a href="#django开发中数据库做过什么优化" class="headerlink" title="django开发中数据库做过什么优化?"></a>django开发中数据库做过什么优化?</h2><p>1.设计表时，尽量少使用外键，因为外键约束会影响插入和删除性能；<br>2.使用缓存，减少对数据库的访问；<br>3.在orm框架下设置表时，能用varchar确定字段长度时，就别用text；<br>4.可以给搜索频率高的字段属性，在定义时创建索引；<br>5.Django orm框架下的Querysets本来就有缓存的；<br>6.如果一个页面需要多次连接数据库，最好一次性取出所有需要的数据，减少对数据库的查询次数；7.若页面只需要数据库里某一个两个字段时，可以用QuerySet.values()；<br>8.在模板标签里使用with标签可以缓存Qset的查询结果。</p>
+<h2 id="验证码过期时间怎么设置？"><a href="#验证码过期时间怎么设置？" class="headerlink" title="验证码过期时间怎么设置？"></a>验证码过期时间怎么设置？</h2><p>将验证码保存到数据库或session，设置过期时间为1分钟，然后页面设置一个倒计时(一般是前端<br>js实现这个计时)的展示，一分钟过后再次点击获取新的信息。</p>
+<h2 id="django如何提升性能（高并发）？"><a href="#django如何提升性能（高并发）？" class="headerlink" title="django如何提升性能（高并发）？"></a>django如何提升性能（高并发）？</h2><p>对一个后端开发程序员来说，提升性能指标主要有两个一个是并发数，另一个是响应时间网站性能的优化一般包括web前端性能优化，应用服务器性能优化，存储服务器优化。<br>对前端的优化主要有：<br>1.减少http请求，减少数据库的访问量，比如使用雪碧图。<br>2.使用浏览器缓存，将一些常用的css，js，logo图标，这些静态资源缓存到本地浏览器，通过设置http头中的cache-control和expires的属性，可设定浏览器缓存，缓存时间可以自定义。<br>3对html，css，javascript文件进行压缩，减少网络的通信量。对我个人而言，我做的优化主要是以下三个方面：<br>1.合理的使用缓存技术，对一些常用到的动态数据，比如首页做一个缓存，或者某些常用的数据做个缓存，设置一定得过期时间，这样减少了对数据库的压力，提升网站性能。<br>2.使用celery消息队列，将耗时的操作扔到队列里，让worker去监听队列里的任务，实现异步操作，比如发邮件，发短信。<br>3.就是代码上的一些优化，补充：nginx部署项目也是项目优化，可以配置合适的配置参数，提升效率，增加并发量。<br>4.如果太多考虑安全因素，服务器磁盘用固态硬盘读写，远远大于机械硬盘，这个技术现在没有普及，主要是固态硬盘技术上还不是完全成熟，相信以后会大量普及。<br>5.另外还可以搭建服务器集群，将并发访问请求，分散到多台服务器上处理。<br>6.最后就是运维工作人员的一些性能优化技术了。</p>
+<h2 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h2><p>服务器向用户返回的状态码和提示信息，常用的有：<br>200 OK：服务器成功返回用户请求的数据<br>201 CREATED：用户新建或修改数据成功。<br>202 Accepted：表示请求已进入后台排队。<br>400 INVALID REQUEST：用户发出的请求有错误。<br>401 Unauthorized：用户没有权限。<br>403 Forbidden：访问被禁止。<br>404 NOT FOUND：请求针对的是不存在的记录。<br>406 Not Acceptable：用户请求的的格式不正确。<br>500 INTERNAL SERVER ERROR：服务器发生错误。</p>
+<h2 id="什么csrf攻击原理？如何解决？"><a href="#什么csrf攻击原理？如何解决？" class="headerlink" title="什么csrf攻击原理？如何解决？"></a>什么csrf攻击原理？如何解决？</h2><img src="/image/csrf.png">
+简单来说就是:你访问了信任网站A，然后A会用保存你的个人信息并返回给你的浏览器一个cookie，然后呢，在cookie的过期时间之内，你去访问了恶意网站B，它给你返回一些恶意请求代码，要求你去访问网站A，而你的浏览器在收到这个恶意请求之后，在你不知情的情况下，会带上保存在本地浏览器的cookie信息去访问网站A，然后网站A误以为是用户本身的操作，导致来自恶意网站C的攻击代码会被执：发邮件，发消息，修改你的密码，购物，转账，偷窥你的个人信息，导致私人信息泄
+漏和账户财产安全收到威胁
+
+<h2 id="有过部署经验？用的什么技术？可以满足多少压力？"><a href="#有过部署经验？用的什么技术？可以满足多少压力？" class="headerlink" title="有过部署经验？用的什么技术？可以满足多少压力？"></a>有过部署经验？用的什么技术？可以满足多少压力？</h2><p>1.有部署经验，在阿里云服务器上部署的<br>2.技术有：nginx + uwsgi的方式来部署Django项目<br>3.无标准答案（例：压力测试一两千）</p>
+<h2 id="对cookie与session的了解？他们能单独用吗？"><a href="#对cookie与session的了解？他们能单独用吗？" class="headerlink" title="对cookie与session的了解？他们能单独用吗？"></a>对cookie与session的了解？他们能单独用吗？</h2><p>Session采用的是在服务器端保持状态的方案，而Cookie采用的是在客户端保持状态的方案。但是禁用Cookie就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于失去了SessionID，也就得不到Session。</p>
+<h2 id="递归-迭代"><a href="#递归-迭代" class="headerlink" title="递归  迭代"></a>递归  迭代</h2><p>自己调自己</p>
 
   </article>
   
@@ -652,7 +665,7 @@ print(c)   # [10]</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1574299062031"></script>
+<script src="/js/app.js?v=1574562122565"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
