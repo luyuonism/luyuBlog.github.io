@@ -3,7 +3,7 @@
 
 <head>
   
-  <title>django配置  STATIC_ROOT - Lu Ruijie&#39;s Personal Homepage</title>
+  <title>文章归档 - Lu Ruijie&#39;s Personal Homepage</title>
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -11,15 +11,11 @@
   
 
   <link rel="shortcut icon" href="/timg.ico" type="image/png" />
-  <meta name="description" content="关于django静态文件的配置说明————STATIC_ROOT和STATIC_URL以及STATICFILES_DIRS">
-<meta name="keywords" content="python,django">
-<meta property="og:type" content="article">
-<meta property="og:title" content="django配置  STATIC_ROOT">
-<meta property="og:url" content="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2019&#x2F;11&#x2F;05&#x2F;django-STATIC_ROOT&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Lu Ruijie&#39;s Personal Homepage">
+<meta property="og:url" content="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;archives&#x2F;page&#x2F;2&#x2F;index.html">
 <meta property="og:site_name" content="Lu Ruijie&#39;s Personal Homepage">
-<meta property="og:description" content="关于django静态文件的配置说明————STATIC_ROOT和STATIC_URL以及STATICFILES_DIRS">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-06T06:01:32.325Z">
 <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/css/mdui.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.15.8/styles/atom-one-dark.css">
@@ -28,7 +24,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1575459447449">
+  <link rel="stylesheet" href="/css/style.css?v=1575459447531">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -172,74 +168,37 @@
   </div>
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
-        <div class="nexmoe-post">
-    <div class="nexmoe-post-cover"> 
-        
-        <img src="https://i.loli.net/2019/07/21/5d33d5dc1531213134.png">
-        
-        <h1>django配置  STATIC_ROOT</h1>
+        <section class="nexmoe-posts" id="brand-waterfall">
+    
+    <div class="nexmoe-post">
+        <a href="/2017/11/13/hello-world/">
+            <div class="nexmoe-post-cover mdui-ripple"> 
+                
+                <img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=355260fb6d09c93d13ff06a5fe5493b9/03087bf40ad162d90e9648e91bdfa9ec8b13cdcf.jpg" alt="Hello World">
+                
+                <h1>Hello World</h1>
+            </div>
+        </a>
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2017年11月13日</a>
+            <a><i class="nexmoefont icon-areachart"></i>74 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
+            
+            
+        </div>
+        <article>
+            
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+            
+        </article>
     </div>
-  <div class="nexmoe-post-meta">
-    <a><i class="nexmoefont icon-calendar-fill"></i>2019年11月05日</a>
-    <a><i class="nexmoefont icon-areachart"></i>322 字</a>
-    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
     
-    
-      <a class="nexmoefont icon-tag-fill -link" href="/tags/django/" rel="tag">django</a> <a class="nexmoefont icon-tag-fill -link" href="/tags/python/" rel="tag">python</a>
-    
-  </div>
-  <article>
-    <p>关于django静态文件的配置说明————STATIC_ROOT和STATIC_URL以及STATICFILES_DIRS</p>
-<a id="more"></a>
-<h3 id="MEDIA-ROOT："><a href="#MEDIA-ROOT：" class="headerlink" title="MEDIA_ROOT："></a>MEDIA_ROOT：</h3><p>在说STATIC_ROOT之前，必须得提一下MEDIA_ROOT，在配置中，当你需要在你的项目中按照你心中的目录来存储文件时，MEDIA_ROOT是必不可少的。</p>
-<pre><code class="python"># 文件存储配置
-MEDIA_URL = &#39;/media/&#39;
-MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;) # 默认根目录</code></pre>
-<p>通过在setting.py文件中添加如上设置，就会设置好你需要放置文件的默认根目录</p>
-<pre><code class="python">image = models.ImageField(upload_to=&quot;image/%Y/%m&quot;, default=u&quot;image/default.png&quot;, max_length=100)</code></pre>
-<p>上面是一个数据库模型的字段代码，当你使用upload_to这个属性的时候，django会自动解析，生成相对路径，保存在MEDIA_ROOT设置的根目录下</p>
-<h3 id="STATIC-ROOT"><a href="#STATIC-ROOT" class="headerlink" title="STATIC_ROOT:"></a>STATIC_ROOT:</h3><p>那为什么要使用STATIC_ROOT呢，是因为当你设置中DEBUG为True时，django会自动为你静态文件代理，不过当DEBUG为False时，意味着你要进入生产环境，那么，你就必须使用STATIC_ROOT来指明你的静态文件在哪里，就像MEDIA_ROOT一样。</p>
-<pre><code class="python">STATIC_URL = &#39;/static/&#39;
-    STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, &quot;static&quot;)
-]
-STATIC_ROOT = os.path.join(BASE_DIR, &quot;static&quot;)</code></pre>
-<p>在setting.py文件中添加上面代码，并且在urls.py中添加下面代码即可</p>
-<pre><code class="python"># 配置静态文件代理
-    url(r&#39;^static/(?P&lt;path&gt;.*)$&#39;, serve, {&#39;document_root&#39;: STATIC_ROOT}),</code></pre>
-<h2 id="最后："><a href="#最后：" class="headerlink" title="最后："></a>最后：</h2><p>详细介绍STATIC_ROOT, <a href="https://blog.csdn.net/alxandral_brother/article/details/52202270" target="_blank" rel="noopener">点击这里</a></p>
-
-  </article>
-  
-    
-<div class="nexmoe-post-copyright">
-<i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
-<strong>本文作者：</strong>ruijielu<br>
-<strong>本文链接：</strong><a href="https://luyuonism.github.io/2019/11/05/django-STATIC_ROOT/" title="https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2019&#x2F;11&#x2F;05&#x2F;django-STATIC_ROOT&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;luyuonism.github.io&#x2F;2019&#x2F;11&#x2F;05&#x2F;django-STATIC_ROOT&#x2F;</a><br>
-
-  <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
-
-</div>
-
-
-  
-  <section class="nexmoe-comment">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.css">
-<div id="gitalk"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.5.0/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-    var gitalk = new Gitalk({
-        clientID: '6697f1e2bc68a9625fed',
-        clientSecret: '173e837a4a0788e2d0c2ecfe68911cd3a3efc2d1',
-        id: window.location.pathname,
-        repo: 'https://luyuonism.github.io',
-        owner: 'luyuonism',
-        admin: 'luyuonism'
-    })
-    gitalk.render('gitalk')
-</script>
 </section>
-</div>
+
+    <nav class="nexmoe-page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&lt;i class=&quot;nexmoefont icon-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
+  
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
@@ -255,7 +214,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, &quot;static&quot;)</code></pre>
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1575459447457"></script>
+<script src="/js/app.js?v=1575459447535"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 

@@ -24,7 +24,7 @@
   
   
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css">
-  <link rel="stylesheet" href="/css/style.css?v=1574562195874">
+  <link rel="stylesheet" href="/css/style.css?v=1575459447527">
 </head>
 
 <body class="mdui-drawer-body-left">
@@ -48,7 +48,7 @@
         </a>
     </div>
     <div class="nexmoe-count">
-        <div><span>文章</span>10</div>
+        <div><span>文章</span>11</div>
         <div><span>标签</span>3</div>
         <div><span>分类</span>0</div>
     </div>
@@ -121,7 +121,7 @@
   <div class="nexmoe-widget-wrap">
     <h3 class="nexmoe-widget-title">文章归档</h3>
     <div class="nexmoe-widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">十一月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li></ul>
     </div>
   </div>
 
@@ -132,6 +132,10 @@
     <h3 class="nexmoe-widget-title">最新文章</h3>
     <div class="nexmoe-widget">
       <ul>
+        
+          <li>
+            <a href="/2019/12/04/question/">Hello World</a>
+          </li>
         
           <li>
             <a href="/2019/11/05/django-STATIC_ROOT/">django配置  STATIC_ROOT</a>
@@ -147,10 +151,6 @@
         
           <li>
             <a href="/2018/06/05/decorator/">decorator</a>
-          </li>
-        
-          <li>
-            <a href="/2018/06/05/sql/">MySql</a>
           </li>
         
       </ul>
@@ -169,6 +169,65 @@
   <div id="nexmoe-content">
     <div class="nexmoe-primary">
         <section class="nexmoe-posts" id="brand-waterfall">
+    
+    <div class="nexmoe-post">
+        <a href="/2019/12/04/question/">
+            <div class="nexmoe-post-cover mdui-ripple"> 
+                
+                <img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=355260fb6d09c93d13ff06a5fe5493b9/03087bf40ad162d90e9648e91bdfa9ec8b13cdcf.jpg" alt="Hello World">
+                
+                <h1>Hello World</h1>
+            </div>
+        </a>
+        <div class="nexmoe-post-meta">
+            <a><i class="nexmoefont icon-calendar-fill"></i>2019年12月04日</a>
+            <a><i class="nexmoefont icon-areachart"></i>1,486 字</a>
+            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 6 分钟</a>
+            
+            
+        </div>
+        <article>
+            
+            <p>##自我介绍<br>##挑一个自己完成的模块<br>##完整的讲述怎么实现<br>##整个工作经历中你觉得做的最重大的贡献的事件</p>
+<p>##过去的项目中有没有什么不完善的地方</p>
+<p>##后台读取数据库没有接口？？</p>
+<p>##python 连接数据库</p>
+<p> import pymysql<br> 连上数据库：帐号、密码、ip、端口号、数据库<br>coon = pymysql.connect(host = ‘127.0.0.1’,user = ‘root’,passwd = ‘123456’,port = 3306,db = ‘mydb’,charset = ‘utf8’）<br> 建立游标<br>cur = coon.cursor()<br> 执行sql<br>cur.execute(“select * from stu”) / cur.execute(‘insert into stu(name,sex) VALUE (“pzp”,”man”);’)  coon.commit() #如果是插入数据，则要commit一下<br> 获取结果<br>res = cur.fetchall()<br> 关闭游标<br>cur.close()<br> 连接关闭<br>coon.close()</p>
+<p>##基本查询语句了解吗</p>
+<p>##linux常用命令   查内存使用率 cpu使用率  磁盘使用率的指令<br>vim 编辑文件  wq!退出<br>cat 查看文件<br>pwd 当前目录<br>touch 新建空文件<br>rm 删除文件<br>mv 移动文件<br>chmod命令使用数字修改文件权限<br>chown命令：修改文件和目录的所有者和所属组<br>改变文件所属用户组：chgrp<br>top命令可以看到总体的系统运行状态和cpu的使用率 。显示96.9id表示空闲cpu<br>使用 free 命令可以显示闲置内存、总内存和交换内等方面的信息，单位是字节。<br>df命令参数功能：检查文件系统的磁盘空间占用情况，可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<p>##容器熟悉吗<br>docker<br>images命令用来查看本机Docker中存在哪些镜像<br>run 命令就是将镜像运行起来的  运行起来的镜像就叫做容器<br>ps命令可以查看当前都运行了一些容器<br>commit命令用来将容器转化为镜像</p>
+<p>##手写代码 </p>
+<p>###输入两个数计算最大公约数<br>def gcd(a, b):<br>      s = x if x＜y else y<br>      for i in range(1,s+1):<br>          if (x%i==0) and (y%i==0):<br>                res = i<br>      minb = res * (a//res) * (b//res)<br>     return res</p>
+<p>def gcd(a,b)<br>      if a == 0:<br>           return b<br>      return gcd(a, a%b)</p>
+<p>###输入一个数，统计＜这个数的质数个数<br>lower = int(input(“输入区间最小值: “))<br>upper = int(input(“输入区间最大值: “))<br>s = 0<br>for num in range(lower,upper + 1):<br>    if num &gt; 1:<br>        for i in range(2,num):<br>            if (num % i) == 0:<br>                break<br>        else:<br>            s += 1</p>
+<p>###输入一个列表，里面包含正数和复数求这个列表哪一个子串的和是最大的，求这个和是多少</p>
+<p>###引用一个库怎么引用 引用一个自定义的模块<br>sys.path.append</p>
+<p>###json格式的字符串怎么转为字典</p>
+<p>import json<br>json.dumps()用于将字典形式的数据转化为字符串<br>json.loads()用于将字符串形式的数据转化为字典<br>json.dump()用于将dict类型的数据转成str，并写入到json文件中<br>json.load()用于从json文件中读取数据</p>
+<p>###元组和列表的区别</p>
+<p>###字符串的本质是什么<br>字符串是可迭代对象，是序列中的有序序列，即可迭代对象就是有序序列</p>
+<p>文件操作 打开文件怎么操作 怎么读取文件内容  如果文件比较大呢</p>
+<p>读模式 r            只能读不能写，文件不存在时会报错<br>读写模式 r+      可以读也可以写，是覆盖写，会把文件最前面的内容覆盖；文件不存在时会报错<br>写模式 w           只能写不能读；写的时候会把原来的文件内容清空；当文件不存在时，会创建新文件<br>追加模式 a         不能读；是追加写，即在原内容末尾添加新内容；文件不存在时创建新文件<br>追加读模式 a+   可读可写；是追加写，即在原内容末尾添加新内容；文件不存在时创建新文件</p>
+<p>打开文件   f = open(file,’模式’,’编码方式’)</p>
+<p>读文件  content = f.read()<br>读取整个文件，将文件内容放到一个字符串变量中。如果文件非常大，尤其是大于内存时，无法使用read()方法。<br>readline()方法：每次读取一行；返回的是一个字符串对象，保持当前行的内存。比readlines慢得多。<br>readlines()方法：一次性读取整个文件；自动将文件内容分析成一个行的列表。</p>
+<p>写文件  f.write(‘Hello, world!’)</p>
+<p>关闭文件  f.close()</p>
+<p>stra == ‘’ 和 stra is none 的区别</p>
+<p>###字符串的拼接有几种方式    有一个列表用+和join哪个更好</p>
+<p>def fun1(fun):<br>    def fun2():<br>         start = time.time()<br>         fun()<br>         end ….<br>         print ….<br>     return fun2</p>
+<p>@fun1<br>def fun():<br>     ….</p>
+<p>fun()</p>
+<p>class Single(Object):<br>    _instance = None<br>    def __new__(cls,*args,**kwargs):<br>         if Single._instance is None:<br>                Single._instance = Object.__new__(cls,*args,**kwargs)<br>         return Single._instance<br>   def __init__….</p>
+<p>##自我介绍<br>##18年7月到10月在干嘛<br>##毕业绩点要求<br>##老家在哪<br>##离职原因<br>##当时基于什么平台开发的<br>##linux熟悉吗   查找一个文件怎么查  在/opt目录下查一个result.txt怎么查   sad截取命令??    查内存以M、G显示<br>##MTV<br>##M层怎么和T层进行数据传输<br>##怎么进行模板继承  语句是什么<br>##需要自己写模板页面<br>##爬虫技术用的框架   框架有什么特色</p>
+<p>##XPath /和//的区别<br>  /a/b/@abc 指的是根节点b元素的属性为abc的子代b元素（一级）；<br>  //a/b/@abc 指的是文档中所有a元素的属性为abc的子代b元素（一级）<br>  //a//b/@abc 指的是文档中所有a元素的属性为abc的后代b元素（包括子代元素）（多级）</p>
+<p>##ORM有几种关联类型<br>  一对一/一对多/多对多</p>
+<p>##forms 到view层怎么用<br>  forms.cleaned_data[“***“]     读取表单返回的值，返回类型为字典dict型</p>
+<p>##用过装饰器吗</p>
+<p>##学长内推  学长还在吗  为什么不去他那<br>##有没有考研计划<br>##开发产品的代码行有多少</p>
+
+            
+        </article>
+    </div>
     
     <div class="nexmoe-post">
         <a href="/2019/11/05/django-STATIC_ROOT/">
@@ -279,7 +338,7 @@
         </a>
         <div class="nexmoe-post-meta">
             <a><i class="nexmoefont icon-calendar-fill"></i>2018年06月05日</a>
-            <a><i class="nexmoefont icon-areachart"></i>675 字</a>
+            <a><i class="nexmoefont icon-areachart"></i>689 字</a>
             <a><i class="nexmoefont icon-time-circle-fill"></i>大概 3 分钟</a>
             
             
@@ -393,31 +452,12 @@
         </article>
     </div>
     
-    <div class="nexmoe-post">
-        <a href="/2017/11/13/hello-world/">
-            <div class="nexmoe-post-cover mdui-ripple"> 
-                
-                <img src="https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=355260fb6d09c93d13ff06a5fe5493b9/03087bf40ad162d90e9648e91bdfa9ec8b13cdcf.jpg" alt="Hello World">
-                
-                <h1>Hello World</h1>
-            </div>
-        </a>
-        <div class="nexmoe-post-meta">
-            <a><i class="nexmoefont icon-calendar-fill"></i>2017年11月13日</a>
-            <a><i class="nexmoefont icon-areachart"></i>74 字</a>
-            <a><i class="nexmoefont icon-time-circle-fill"></i>大概 1 分钟</a>
-            
-            
-        </div>
-        <article>
-            
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-            
-        </article>
-    </div>
-    
 </section>
 
+    <nav class="nexmoe-page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">&lt;i class=&quot;nexmoefont icon-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    </nav>
+  
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/mdui@0.4.3/dist/js/mdui.min.js"></script>
@@ -433,7 +473,7 @@
 <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.15.8/build/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<script src="/js/app.js?v=1574562195877"></script>
+<script src="/js/app.js?v=1575459447530"></script>
 <script src="https://cdn.jsdelivr.net/npm/lazysizes@5.1.0/lazysizes.min.js"></script>
 
 
